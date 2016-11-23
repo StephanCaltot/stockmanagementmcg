@@ -6,41 +6,40 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.omg.PortableInterceptor.ClientRequestInfoOperations;
 
 import javax.persistence.*;
-import java.util.List;
 
 /**
  * Created by jlng on 22/11/16.
  */
 
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = CMaterial.class)
 @Entity
 @Table(schema = "stock")
-@TableGenerator(name="ROOM_GEN",
-        table="ID_GEN_ROOM",
+@TableGenerator(name="MATERIAL_GEN",
+        table="ID_GEN_MATERIAL",
         pkColumnName="GEN_KEY",
         valueColumnName="GEN_VALUE",
-        pkColumnValue="ROOM_ID",
+        pkColumnValue="MATERIAL_ID",
         allocationSize=1)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(builderMethodName = "nameBuilder")
-@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = CRoom.class)
-@NamedQuery(name="CRoom.findAll", query="SELECT a FROM CRoom a")
-public class CRoom {
+@NamedQuery(name="CMaterial.findAll", query="SELECT a FROM CMaterial a")
+public class CMaterial {
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE, generator = "ROOM_GEN")
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "MATERIAL_GEN")
     @Column(name = "ID")
     private int id;
 
     private String mName;
 
-    @OneToMany(mappedBy="mRoom", cascade = CascadeType.ALL)
-    private List<CMaterial> mMateriels;
+    @ManyToOne (cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
+    @JoinColumn(name="ROOM_ID")
+    private CRoom mRoom;
 
-    public static CRoomBuilder builder(String pName) {
+    public static CMaterialBuilder builder(String pName) {
         return nameBuilder().mName(pName);
     }
 

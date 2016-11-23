@@ -59,6 +59,5 @@ target/**
 .project
 .settings
 *.log
-saveZoo1Test
 */dependency-reduced-pom.xml
 createDDL_ddlGeneration.sql
