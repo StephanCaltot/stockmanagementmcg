@@ -22,6 +22,7 @@ public class CrudServiceBean<T> implements CrudService<T> {
     @PersistenceContext
     EntityManager mEntityManager;
 
+    @Override
     public  T create(T t) {
         this.mEntityManager.persist(t);
         this.mEntityManager.flush();
@@ -30,27 +31,33 @@ public class CrudServiceBean<T> implements CrudService<T> {
     }
 
     @SuppressWarnings("unchecked")
+    @Override
     public  T find(Class pType,Object pId) {
         return (T) this.mEntityManager.find(pType, pId);
     }
 
+    @Override
     public void delete(Class pType,Object pId) {
         Object ref = this.mEntityManager.getReference(pType, pId);
         this.mEntityManager.remove(ref);
     }
 
+    @Override
     public  T update(T t) {
-        return (T)this.mEntityManager.merge(t);
+        return this.mEntityManager.merge(t);
     }
 
+    @Override
     public List findWithNamedQuery(String pNamedQueryName){
         return this.mEntityManager.createNamedQuery(pNamedQueryName).getResultList();
     }
 
+    @Override
     public List findWithNamedQuery(String pNamedQueryName, Map<String, Object> pParameters){
         return findWithNamedQuery(pNamedQueryName, pParameters, 0);
     }
 
+    @Override
     public List findWithNamedQuery(String pQueryName, int pResultLimit) {
         return this.mEntityManager.createNamedQuery(pQueryName).setMaxResults(pResultLimit).getResultList();
     }
@@ -59,6 +66,7 @@ public class CrudServiceBean<T> implements CrudService<T> {
         return this.mEntityManager.createNativeQuery(pSql, pType).getResultList();
     }
 
+    @Override
     public List findWithNamedQuery(String pNamedQueryName, Map<String, Object> pParameters,int pResultLimit){
         Set<Map.Entry<String, Object>> lRawParameters = pParameters.entrySet();
         Query lQuery = this.mEntityManager.createNamedQuery(pNamedQueryName);

@@ -1,6 +1,7 @@
 package fr.univtln.mcg;
 
 import fr.univtln.mcg.utils.CrudService;
+import org.eclipse.persistence.jpa.jpql.Assert;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -16,19 +17,24 @@ import java.util.List;
 @Stateless
 public abstract class AGenericServices<T> {
     
-    @Inject
     CrudService<T> mCrudService;
+
+    @Inject
+    public AGenericServices (CrudService<T> mCrudService) {
+        Assert.isNotNull(mCrudService, "mCrudService must not be null!");
+        this.mCrudService = mCrudService;
+    }
 
     private Class genType(){
         Class<T> lType = null;
-        ParameterizedType $thisClass = (ParameterizedType) this.getClass().getGenericSuperclass();
-        Type $T = $thisClass.getActualTypeArguments()[0];
-        if ($T instanceof Class){
-            lType = (Class<T>) $T;
+        ParameterizedType lThisClass = (ParameterizedType) this.getClass().getGenericSuperclass();
+        Type lT = lThisClass.getActualTypeArguments()[0];
+        if (lT instanceof Class){
+            lType = (Class<T>) lT;
         }
 
-        else if ($T instanceof ParameterizedType) {
-            lType = (Class <T>) ((ParameterizedType) $T).getRawType();
+        else if (lT instanceof ParameterizedType) {
+            lType = (Class <T>) ((ParameterizedType) lT).getRawType();
         }
         return lType;
     }

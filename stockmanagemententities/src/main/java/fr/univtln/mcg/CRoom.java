@@ -2,12 +2,12 @@ package fr.univtln.mcg;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import fr.univtln.mcg.enums.ERoomTypes;
+import fr.univtln.mcg.material.CMaterial;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.omg.PortableInterceptor.ClientRequestInfoOperations;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -37,11 +37,13 @@ public class CRoom {
 
     private String mName;
 
+    private ERoomTypes mType;
+
     @OneToMany(mappedBy="mRoom", cascade = CascadeType.ALL)
     private List<CMaterial> mMateriels;
 
-    public static CRoomBuilder builder(String pName) {
-        return nameBuilder().mName(pName);
+    public static CRoomBuilder builder(String pName, ERoomTypes pType) {
+        return nameBuilder().mName(pName).mType(pType);
     }
 
 }
