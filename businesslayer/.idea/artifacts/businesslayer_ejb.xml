@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="ejb-jar" name="businesslayer:ejb">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="businesslayer-1.0-SNAPSHOT.jar">
+      <element id="artifact" artifact-name="businesslayer:ejb exploded" />
+    </root>
+  </artifact>
+</component>
