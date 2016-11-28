@@ -21,7 +21,6 @@ import javax.persistence.Table;
                @JsonSubTypes.Type(value = CArmChair.class, name = "CArmChair"),})
 @Entity
 @Table(schema = "stock")
-
 @Data
 @NoArgsConstructor
 @NamedQuery(name="CPedagogic.findAll", query="SELECT p FROM CPedagogic p")

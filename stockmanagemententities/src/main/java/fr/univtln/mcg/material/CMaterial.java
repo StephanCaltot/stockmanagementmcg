@@ -32,8 +32,6 @@ import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
-@Builder(builderMethodName = "nameBuilder")
 @NamedQuery(name="CMaterial.findAll", query="SELECT a FROM CMaterial a")
 public abstract class CMaterial {
     @Id
@@ -45,9 +43,4 @@ public abstract class CMaterial {
     @ManyToOne (cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinColumn(name="ROOM_ID")
     private CRoom mRoom;
-
-    public static CMaterialBuilder builder(String pName) {
-        return nameBuilder().mName(pName);
-    }
-
 }

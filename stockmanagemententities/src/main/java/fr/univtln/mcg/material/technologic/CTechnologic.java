@@ -26,8 +26,6 @@ import javax.persistence.Table;
 @Table(schema = "stock")
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
-@Builder(builderMethodName = "brandBuilder")
 @NamedQuery(name="CTechnologic.findAll", query="SELECT t FROM CTechnologic t")
 public abstract class CTechnologic extends CMaterial {
 
