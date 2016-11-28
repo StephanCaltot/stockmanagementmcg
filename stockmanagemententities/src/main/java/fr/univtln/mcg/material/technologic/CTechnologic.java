@@ -6,14 +6,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import fr.univtln.mcg.enums.ETechnologicBrands;
 import fr.univtln.mcg.material.CMaterial;
-import fr.univtln.mcg.material.pedagogic.CArmChair;
-import fr.univtln.mcg.material.pedagogic.CBoard;
-import fr.univtln.mcg.material.pedagogic.CChalk;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.Entity;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;

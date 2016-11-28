@@ -2,18 +2,13 @@ package fr.univtln.mcg;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import fr.univtln.mcg.enums.ERoomTypes;
 import fr.univtln.mcg.material.CMaterial;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.omg.CORBA.PRIVATE_MEMBER;
-import sun.java2d.pipe.SpanShapeRenderer;
-
 import javax.persistence.*;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created by screetts on 28/11/16.

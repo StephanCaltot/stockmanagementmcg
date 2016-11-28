@@ -6,15 +6,11 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import fr.univtln.mcg.CRoom;
 import fr.univtln.mcg.material.pedagogic.CPedagogic;
-import fr.univtln.mcg.material.technologic.CComputer;
-import fr.univtln.mcg.material.technologic.COverheadProjector;
 import fr.univtln.mcg.material.technologic.CTechnologic;
-import fr.univtln.mcg.material.technologic.CWorkPhone;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 
 /**

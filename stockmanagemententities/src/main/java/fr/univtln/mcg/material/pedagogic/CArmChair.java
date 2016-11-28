@@ -3,12 +3,10 @@ package fr.univtln.mcg.material.pedagogic;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import fr.univtln.mcg.enums.EArmChairTypes;
-import fr.univtln.mcg.material.technologic.CComputer;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.Entity;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
