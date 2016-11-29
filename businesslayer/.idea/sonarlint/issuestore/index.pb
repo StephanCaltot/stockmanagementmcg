@@ -1,0 +1,17 @@
+
+7
+pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
+a
+1src/main/java/fr/univtln/mcg/IGenericManager.java,5/b/5b7f2f3f2d7676d280c3e663f0b23da4c7ee259d
+f
+6src/main/java/fr/univtln/mcg/CMaterialManagerBean.java,5/5/557d17dfd8c8f2a9be391460ecae7a5dc9edf724
+b
+2src/main/java/fr/univtln/mcg/CRoomManagerBean.java,f/2/f2449afaa66cb254707495aa4bc8cbdab749e81b
+e
+5src/main/java/fr/univtln/mcg/CGenericManagerBean.java,a/0/a0a0f07c6a6d4bbb6c4cf7ae793cbb1c837c26d4
+f
+6src/main/java/fr/univtln/mcg/CActivityManagerBean.java,0/1/01918421b766ef34bd9617a0cab0b52ac71c06de
+i
+9src/main/java/fr/univtln/mcg/CActivityLogManagerBean.java,d/c/dc3366a3aaccd6f840454547bfcf3cf11df1426f
+d
+4src/main/java/fr/univtln/mcg/CPersonManagerBean.java,d/b/db0cbe391dacac6b77e0d2fff7b4d4b44f1394c6
