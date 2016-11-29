@@ -7,13 +7,10 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import fr.univtln.mcg.CRoom;
 import fr.univtln.mcg.material.pedagogic.CPedagogic;
 import fr.univtln.mcg.material.technologic.CTechnologic;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 /**
  * Created by jlng on 22/11/16.
