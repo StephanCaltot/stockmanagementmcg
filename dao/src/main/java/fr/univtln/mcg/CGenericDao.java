@@ -1,9 +1,10 @@
 package fr.univtln.mcg;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
+import javax.ejb.Local;
+import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
+import javax.persistence.*;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.List;
@@ -13,10 +14,13 @@ import java.util.Set;
 /**
  * Created by marti on 28/11/2016.
  */
+@Stateless
+@Local(CGenericDao.class)
+@TransactionAttribute(TransactionAttributeType.MANDATORY)
 public class CGenericDao<T> implements IGenericDao<T>{
 
-    EntityManagerFactory mEntityManagerFactory = Persistence.createEntityManagerFactory("NewPersistenceUnit");
-    EntityManager mEntityManager = mEntityManagerFactory.createEntityManager();
+    @PersistenceContext(unitName = "stockmanagement" )
+    EntityManager mEntityManager;
 
     public T create(T pT) {
         mEntityManager.persist(pT);
@@ -42,16 +46,16 @@ public class CGenericDao<T> implements IGenericDao<T>{
     }
 
     public List<T> findAll() {
-        Class<T> _type = null;
-        ParameterizedType $thisClass = (ParameterizedType) this.getClass().getGenericSuperclass();
-        Type $T = $thisClass.getActualTypeArguments()[0];
-        if ($T instanceof Class) {
-            _type = (Class<T>)$T;
+        Class<T> type = null;
+        ParameterizedType thisClass = (ParameterizedType) this.getClass().getGenericSuperclass();
+        Type dollarsT = thisClass.getActualTypeArguments()[0];
+        if (dollarsT instanceof Class) {
+            type = (Class<T>)dollarsT;
         }
-        else if ($T instanceof ParameterizedType) {
-            _type = (Class<T>)((ParameterizedType)$T).getRawType();
+        else if (dollarsT instanceof ParameterizedType) {
+            type = (Class<T>)((ParameterizedType)dollarsT).getRawType();
         }
-        return findWithNamedQuery(_type.getSimpleName() + ".getAll");
+        return findWithNamedQuery(type.getSimpleName() + ".getAll");
     }
 
     public List<T> findWithNamedQuery(String pQuery) {

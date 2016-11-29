@@ -1,7 +1,5 @@
 package fr.univtln.mcg.dao;
 
-import fr.univtln.mcg.IGenericDao;
-
 import javax.ejb.Local;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
@@ -19,7 +17,7 @@ import java.util.Set;
  * Created by marti on 28/11/2016.
  */
 @Stateless
-@Local(fr.univtln.mcg.CGenericDao.class)
+@Local(CGenericDao.class)
 @TransactionAttribute(TransactionAttributeType.MANDATORY)
 public class CGenericDao<T> implements IGenericDao<T> {
 
