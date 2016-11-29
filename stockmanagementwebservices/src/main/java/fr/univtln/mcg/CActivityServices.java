@@ -12,7 +12,4 @@ import javax.ws.rs.core.MediaType;
 @Path("activity")
 public class CActivityServices extends AGenericServices<CActivity> {
 
-    public CActivityServices(CGenericDao<CActivity> mCrudService) {
-        super(mCrudService);
-    }
 }

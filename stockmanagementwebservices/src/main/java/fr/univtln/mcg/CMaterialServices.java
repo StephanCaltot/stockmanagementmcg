@@ -13,7 +13,4 @@ import javax.ws.rs.core.MediaType;
 @Path("material")
 public class CMaterialServices extends AGenericServices<CMaterial> {
 
-    public CMaterialServices(CGenericDao<CMaterial> mCrudService) {
-        super(mCrudService);
-    }
 }

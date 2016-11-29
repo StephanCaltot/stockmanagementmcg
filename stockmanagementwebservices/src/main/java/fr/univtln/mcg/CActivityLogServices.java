@@ -12,7 +12,4 @@ import javax.ws.rs.core.MediaType;
 @Path("activitylog")
 public class CActivityLogServices extends AGenericServices<CActivityLog> {
 
-    public CActivityLogServices(CGenericDao<CActivityLog> mCrudService) {
-        super(mCrudService);
-    }
 }

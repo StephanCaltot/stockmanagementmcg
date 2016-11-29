@@ -12,7 +12,4 @@ import javax.ws.rs.core.MediaType;
 @Path("person")
 public class CPersonServices extends AGenericServices<CPerson> {
 
-    public CPersonServices(CGenericDao<CPerson> mCrudService) {
-        super(mCrudService);
-    }
 }

@@ -1,5 +1,7 @@
 package fr.univtln.mcg;
 
+import fr.univtln.mcg.utils.CrudService;
+import fr.univtln.mcg.utils.CrudServiceBean;
 import org.eclipse.persistence.jpa.jpql.Assert;
 
 import javax.ejb.Stateless;
@@ -15,14 +17,9 @@ import java.util.List;
  */
 @Stateless
 public abstract class AGenericServices<T> {
-    
-    CGenericDao<T> mCrudService;
-
     @Inject
-    public AGenericServices (CGenericDao<T> mCrudService) {
-        Assert.isNotNull(mCrudService, "mCrudService must not be null!");
-        this.mCrudService = mCrudService;
-    }
+    CrudService<T> mCrudService;
+
 
     private Class genType(){
         Class<T> lType = null;
