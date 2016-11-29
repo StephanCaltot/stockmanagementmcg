@@ -15,3 +15,9 @@ i
 9src/main/java/fr/univtln/mcg/CActivityLogManagerBean.java,d/c/dc3366a3aaccd6f840454547bfcf3cf11df1426f
 d
 4src/main/java/fr/univtln/mcg/CPersonManagerBean.java,d/b/db0cbe391dacac6b77e0d2fff7b4d4b44f1394c6
+d
+4src/main/java/fr/univtln/mcg/dao/QueryParameter.java,5/0/50092107a9ac6d310363349cc0ee42081ddd55c8
+a
+1src/main/java/fr/univtln/mcg/dao/CGenericDao.java,0/9/09f41fcf47f443e9d18e922c3a971f6bd01eec62
+a
+1src/main/java/fr/univtln/mcg/dao/IGenericDao.java,0/0/007a9cc0da1fc32ea38215f384ffc358b790409d

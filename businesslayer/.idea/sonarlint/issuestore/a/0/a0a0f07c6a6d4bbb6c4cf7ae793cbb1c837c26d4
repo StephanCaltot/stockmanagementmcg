@@ -1,10 +1,10 @@
 
-Ysquid:S1226"?Introduce a new variable instead of reusing the parameter "pT".(ÏÿØ‡ýÿÿÿÿ
-qsquid:S00117"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õ€ø¸üÿÿÿÿ
 qsquid:S00117"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(É¢¼Áûÿÿÿÿ
-qsquid:S00117"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïÚÔƒûÿÿÿÿ
-qsquid:S00117"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïÚÔƒûÿÿÿÿ
 Ysquid:S1226"?Introduce a new variable instead of reusing the parameter "pT".(¦÷š¶þÿÿÿÿ
-qsquid:S00117"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(É¢¼Áûÿÿÿÿ
+qsquid:S00117"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õ€ø¸üÿÿÿÿ
 Csquid:S3306")Use constructor injection for this field.(ÞáÕËÿÿÿÿÿ
 qsquid:S00117"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õ€ø¸üÿÿÿÿ
+qsquid:S00117"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïÚÔƒûÿÿÿÿ
+qsquid:S00117"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(É¢¼Áûÿÿÿÿ
+Ysquid:S1226"?Introduce a new variable instead of reusing the parameter "pT".(ÏÿØ‡ýÿÿÿÿ
+qsquid:S00117"VRename this local variable name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïÚÔƒûÿÿÿÿ
