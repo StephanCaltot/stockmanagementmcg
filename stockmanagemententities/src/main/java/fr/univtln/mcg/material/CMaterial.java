@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.sun.istack.internal.NotNull;
 import fr.univtln.mcg.CRoom;
 import fr.univtln.mcg.material.pedagogic.CPedagogic;
 import fr.univtln.mcg.material.technologic.CTechnologic;
@@ -12,6 +13,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 /**
  * Created by jlng on 22/11/16.
@@ -35,12 +37,13 @@ import javax.persistence.*;
 @NamedQuery(name="CMaterial.findAll", query="SELECT a FROM CMaterial a")
 public abstract class CMaterial {
     @Id
+    @NotNull
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "MATERIAL_GEN")
     @Column(name = "ID")
     private int id;
-    private String mName;
 
     @ManyToOne (cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinColumn(name="ROOM_ID")
+    @NotNull
     private CRoom mRoom;
 }

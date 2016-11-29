@@ -2,11 +2,14 @@ package fr.univtln.mcg;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.sun.istack.internal.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
+import javax.validation.Valid;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 /**
@@ -27,9 +30,11 @@ public class CActivityLog {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "ACTIVITY_LOG_GEN")
     @Column(name = "ID")
+    @NotNull
     private int id;
 
     @OneToMany(cascade = CascadeType.ALL)
+    @Valid
     private List<CActivity> mActivityLog;
 
     public static CActivityLog.CActivityLogBuilder builder(List<CActivity> pActivityLog) {
