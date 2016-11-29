@@ -1,0 +1,10 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea
+Supprimerait .gitignore
+Supprimerait .idea/sonarlint/
+Supprimerait businesslayer/target/generated-sources/
+Supprimerait dao/.idea/sonarlint/issuestore/3/b/
+Supprimerait stockmanagementjsf/.idea/sonarlint/
+Supprimerait stockmanagementjsf/target/generated-sources/
+Supprimerait stockmanagementjsf/target/stockmanagementjsf/.idea/sonarlint/
+Supprimerait stockmanagementjsf/target/stockmanagementjsf/META-INF/
