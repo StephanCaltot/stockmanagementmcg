@@ -24,9 +24,8 @@
         <dependency>
             <groupId>fr.univtln.mcg</groupId>
             <artifactId>stockmanagemententities</artifactId>
-            <version>1.0-businesslayer-SNAPSHOT</version>
+            <version>1.0-jsf-SNAPSHOT</version>
         </dependency>
-
         <dependency>
             <groupId>fr.univtln.mcg</groupId>
             <artifactId>dao</artifactId>

@@ -1,5 +1,7 @@
 package fr.univtln.mcg;
 
+import fr.univtln.mcg.material.CMaterial;
+
 import javax.ejb.Stateless;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;

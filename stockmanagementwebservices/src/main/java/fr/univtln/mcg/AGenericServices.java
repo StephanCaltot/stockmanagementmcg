@@ -1,6 +1,7 @@
 package fr.univtln.mcg;
 
-import fr.univtln.mcg.utils.CrudService;
+
+import fr.univtln.mcg.dao.CrudService;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -15,39 +16,37 @@ import java.util.List;
  */
 @Stateless
 public abstract class AGenericServices<T> {
-    
     @Inject
-    CrudService<T> mCrudService;
+    CrudService<T> crudService;
 
-    private Class genType(){
-        Class<T> lType = null;
-        ParameterizedType $thisClass = (ParameterizedType) this.getClass().getGenericSuperclass();
-        Type $T = $thisClass.getActualTypeArguments()[0];
-        if ($T instanceof Class){
-            lType = (Class<T>) $T;
+    private Class getType(){
+        Class<T> type = null;
+        ParameterizedType thisClass = (ParameterizedType) this.getClass().getGenericSuperclass();
+        Type dollarsT = thisClass.getActualTypeArguments()[0];
+        if (dollarsT instanceof Class) {
+            type = (Class<T>)dollarsT;
         }
-
-        else if ($T instanceof ParameterizedType) {
-            lType = (Class <T>) ((ParameterizedType) $T).getRawType();
+        else if (dollarsT instanceof ParameterizedType) {
+            type = (Class<T>)((ParameterizedType)dollarsT).getRawType();
         }
-        return lType;
+        return type;
     }
 
     @GET
     @Path("{id}")
     public T find(@PathParam("id") int id) {
-        return mCrudService.find(genType(), id);
+        return crudService.find(getType(),id);
     }
 
 
     @GET
     public List<T> findAll() {
-        return mCrudService.findWithNamedQuery(genType().getSimpleName() + ".findAll");
+        return crudService.findWithNamedQuery("CRoom.findAll");
     }
 
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public T create(T t) {
-        return mCrudService.create(t);
+        return crudService.create(t);
     }
 }

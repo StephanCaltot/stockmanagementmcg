@@ -1,0 +1,10 @@
+fr/univtln/mcg/dao/IGenericDao.class
+fr/univtln/mcg/CActivityManagerBean.class
+fr/univtln/mcg/CMaterialManagerBean.class
+fr/univtln/mcg/IGenericManager.class
+fr/univtln/mcg/CGenericManagerBean.class
+fr/univtln/mcg/dao/QueryParameter.class
+fr/univtln/mcg/CPersonManagerBean.class
+fr/univtln/mcg/CRoomManagerBean.class
+fr/univtln/mcg/dao/CGenericDao.class
+fr/univtln/mcg/CActivityLogManagerBean.class
