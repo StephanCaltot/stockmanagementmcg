@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>fr.univtln.bruno</groupId>
+    <artifactId>CommonPOM</artifactId>
+    <version>0.2</version>
+  </parent>
+
+  <repositories>
+    <repository>
+      <id>lsis-artifactory</id>
+      <name>lsis-artifactory-releases</name>
+      <url>https://artifactory.lsis.univ-tln.fr/artifactory/bruno</url>
+    </repository>
+  </repositories>
+
+
+  <scm>
+    <connection>scm:git@github.com:dptinfoutln/m2dapm2016-tp2-mcg.git</connection>
+    <url>https://github.com/dptinfoutln/m2dapm2016-tp2-mcg</url>
+  </scm>
+
+  <distributionManagement>
+    <repository>
+      <id>lsis-m2-2016-artifactory</id>
+      <name>lsis-artifactory-releases</name>
+      <url>https://artifactory.lsis.univ-tln.fr/artifactory/M22016</url>
+    </repository>
+    <snapshotRepository>
+      <id>lsis-m2-2016-artifactory-snapshots</id>
+      <name>lsis-artifactory-snapshots</name>
+      <url>https://artifactory.lsis.univ-tln.fr/artifactory/M22016</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <groupId>fr.univtln.mcg</groupId>
+  <artifactId>stockmanagement</artifactId>
+
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>stockmanagement</name>
+  <url>http://maven.apache.org</url>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+</project>
