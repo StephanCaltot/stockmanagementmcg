@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.sun.istack.internal.NotNull;
 import fr.univtln.mcg.enums.ETechnologicBrands;
 import fr.univtln.mcg.material.CMaterial;
 import lombok.AllArgsConstructor;
@@ -29,6 +30,7 @@ import javax.persistence.Table;
 @NamedQuery(name="CTechnologic.findAll", query="SELECT t FROM CTechnologic t")
 public abstract class CTechnologic extends CMaterial {
 
+    @NotNull
     private ETechnologicBrands mBrand;
 
 }

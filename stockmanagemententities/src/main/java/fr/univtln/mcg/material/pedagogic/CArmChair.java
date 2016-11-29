@@ -2,6 +2,7 @@ package fr.univtln.mcg.material.pedagogic;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.sun.istack.internal.NotNull;
 import fr.univtln.mcg.enums.EArmChairTypes;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,6 +26,7 @@ import javax.persistence.Table;
 @NamedQuery(name="CArmChair.findAll", query="SELECT a FROM CArmChair a")
 public class CArmChair extends CPedagogic {
 
+    @NotNull
     private EArmChairTypes mType;
 
 }

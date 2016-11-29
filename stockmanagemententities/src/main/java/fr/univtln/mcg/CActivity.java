@@ -2,12 +2,15 @@ package fr.univtln.mcg;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.sun.istack.internal.NotNull;
 import fr.univtln.mcg.material.CMaterial;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
+import javax.validation.Valid;
+import javax.validation.constraints.Pattern;
 import java.text.SimpleDateFormat;
 
 /**
@@ -26,17 +29,25 @@ public class CActivity {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "ACTIVITY_GEN")
     @Column(name = "ID")
+    @NotNull
     private int id;
 
     @ManyToOne (cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinColumn(name="PERSON_ID")
+    @NotNull
     private CPerson mPerson;
+
     @ManyToOne (cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinColumn(name="MATERIAL_ID")
+    @NotNull
     private CMaterial mMaterial;
+
     @ManyToOne (cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinColumn(name="ROOM_ID")
+    @NotNull
     private CRoom mRoom;
+
+//    @Pattern(regexp="\\(\\d{3}\\)\\d{3}-\\d{4}")
     private SimpleDateFormat mSdf = new SimpleDateFormat("dd/M/yyyy");
 
 

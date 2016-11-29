@@ -2,6 +2,7 @@ package fr.univtln.mcg.material.technologic;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.sun.istack.internal.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,6 +25,7 @@ import javax.persistence.Table;
 @NamedQuery(name="CComputer.findAll", query="SELECT c FROM CComputer c")
 public class CComputer extends CTechnologic {
 
+    @NotNull
     private boolean mTouch;
 
 

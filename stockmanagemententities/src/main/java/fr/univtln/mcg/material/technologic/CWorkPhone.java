@@ -2,6 +2,7 @@ package fr.univtln.mcg.material.technologic;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.sun.istack.internal.NotNull;
 import fr.univtln.mcg.enums.EWorkPhoneOs;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,5 +26,6 @@ import javax.persistence.Table;
 @NamedQuery(name="CWorkPhone.findAll", query="SELECT w FROM CWorkPhone w")
 public class CWorkPhone extends CTechnologic {
 
+    @NotNull
     private EWorkPhoneOs mOs;
 }

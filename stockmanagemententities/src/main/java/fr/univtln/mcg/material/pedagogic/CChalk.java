@@ -2,6 +2,7 @@ package fr.univtln.mcg.material.pedagogic;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.sun.istack.internal.NotNull;
 import fr.univtln.mcg.enums.EChalkColors;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,5 +26,6 @@ import javax.persistence.Table;
 @NamedQuery(name="CChalk.findAll", query="SELECT c FROM CChalk c")
 public class CChalk extends CPedagogic {
 
+    @NotNull
     private EChalkColors mColor;
 }
