@@ -2,15 +2,13 @@ package fr.univtln.mcg;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import com.sun.istack.internal.NotNull;
 import fr.univtln.mcg.material.CMaterial;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
-import javax.validation.Valid;
-import javax.validation.constraints.Pattern;
+import javax.validation.constraints.NotNull;
 import java.text.SimpleDateFormat;
 
 /**
