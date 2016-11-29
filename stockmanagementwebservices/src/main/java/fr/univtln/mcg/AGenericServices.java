@@ -1,9 +1,5 @@
 package fr.univtln.mcg;
 
-import fr.univtln.mcg.utils.CrudService;
-import fr.univtln.mcg.utils.CrudServiceBean;
-import org.eclipse.persistence.jpa.jpql.Assert;
-
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -18,7 +14,7 @@ import java.util.List;
 @Stateless
 public abstract class AGenericServices<T> {
     @Inject
-    CrudService<T> mCrudService;
+    CGenericManagerBean<T> mGenericManagerBean;
 
 
     private Class genType(){
@@ -38,18 +34,18 @@ public abstract class AGenericServices<T> {
     @GET
     @Path("{id}")
     public T find(@PathParam("id") int id) {
-        return mCrudService.find(genType(), id);
+        return mGenericManagerBean.find(id);
     }
 
 
     @GET
     public List<T> findAll() {
-        return mCrudService.findWithNamedQuery(genType().getSimpleName() + ".findAll");
+        return mGenericManagerBean.findAll();
     }
 
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public T create(T t) {
-        return mCrudService.create(t);
+        return mGenericManagerBean.create(t);
     }
 }

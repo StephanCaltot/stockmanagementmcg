@@ -47,8 +47,8 @@
         </dependency>
         <dependency>
             <groupId>fr.univtln.mcg</groupId>
-            <artifactId>stockmanagemententities</artifactId>
-            <version>1.0-jsf-SNAPSHOT</version>
+            <artifactId>businesslayer</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
