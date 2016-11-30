@@ -1,8 +1,8 @@
-package fr.univtln.mcg.material.technologic;
+package fr.univtln.mcg.material.pedagogic;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import fr.univtln.mcg.enums.EWorkPhoneOs;
+import fr.univtln.mcg.enums.EArmChairTypes;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,17 +15,18 @@ import javax.validation.constraints.NotNull;
 /**
  * Created by screetts on 28/11/16.
  */
-@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = CWorkPhone.class)
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = ArmChair.class)
 @Entity
 @Table(schema = "stock")
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder(builderMethodName = "osBuilder")
-@NamedQuery(name="CWorkPhone.findAll", query="SELECT w FROM CWorkPhone w")
-public class CWorkPhone extends CTechnologic {
+@Builder(builderMethodName = "typeBuilder")
+@NamedQuery(name="ArmChair.findAll", query="SELECT a FROM ArmChair a")
+public class ArmChair extends Educational {
 
     @NotNull
-    private EWorkPhoneOs mOs;
+    private EArmChairTypes mType;
+
 }

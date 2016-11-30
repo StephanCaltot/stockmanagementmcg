@@ -1,8 +1,8 @@
-package fr.univtln.mcg.material.pedagogic;
+package fr.univtln.mcg.material.technologic;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import fr.univtln.mcg.enums.EChalkColors;
+import fr.univtln.mcg.enums.EWorkPhoneOs;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,17 +15,17 @@ import javax.validation.constraints.NotNull;
 /**
  * Created by screetts on 28/11/16.
  */
-@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = CChalk.class)
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = WorkPhone.class)
 @Entity
 @Table(schema = "stock")
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder(builderMethodName = "colorBuilder")
-@NamedQuery(name="CChalk.findAll", query="SELECT c FROM CChalk c")
-public class CChalk extends CPedagogic {
+@Builder(builderMethodName = "osBuilder")
+@NamedQuery(name="WorkPhone.findAll", query="SELECT w FROM WorkPhone w")
+public class WorkPhone extends Technologic {
 
     @NotNull
-    private EChalkColors mColor;
+    private EWorkPhoneOs mOs;
 }
