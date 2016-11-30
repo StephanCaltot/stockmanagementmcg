@@ -32,6 +32,7 @@ import javax.validation.constraints.NotNull;
 @Data
 @NoArgsConstructor
 @NamedQuery(name="CMaterial.findAll", query="SELECT a FROM CMaterial a")
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
 public abstract class CMaterial {
     @Id
     @NotNull

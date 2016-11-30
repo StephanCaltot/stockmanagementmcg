@@ -8,9 +8,8 @@ import fr.univtln.mcg.enums.ETechnologicBrands;
 import fr.univtln.mcg.material.CMaterial;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import javax.persistence.Entity;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -26,6 +25,7 @@ import javax.validation.constraints.NotNull;
 @Data
 @NoArgsConstructor
 @NamedQuery(name="CTechnologic.findAll", query="SELECT t FROM CTechnologic t")
+@Inheritance(strategy= InheritanceType.TABLE_PER_CLASS)
 public abstract class CTechnologic extends CMaterial {
 
     @NotNull
