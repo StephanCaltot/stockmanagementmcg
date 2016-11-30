@@ -1,5 +1,6 @@
 package fr.univtln.mcg.jsf;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -20,9 +21,14 @@ public class app {
         Response response = target.request().get();
         String value = response.readEntity(String.class);
         System.out.println(value);
-        Gson gson = new Gson();
-        List<CRoom> videos = gson.fromJson(value, new TypeToken<List<CRoom>>(){}.getType());
-        response.close();
 
+        // JACKSON
+        ObjectMapper mapper = new ObjectMapper();
+        List<CRoom> rooms = mapper.readValue(value, new TypeReference<List<CRoom>>(){});
+
+        response.close();
+        System.out.println(rooms);
+
+        System.out.println("0 ----> " + rooms.get(0).getMName());
     }
 }

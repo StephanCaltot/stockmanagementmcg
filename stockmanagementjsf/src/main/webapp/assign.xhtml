@@ -7,10 +7,41 @@
         >
 
     <ui:define name="bodyContent">
-        <h:selectOneListbox value="#{dataScrollerViewRoom.rooms}">
-            <f:selectItem itemValue="1" itemLabel="Item 1" />
-            <f:selectItem itemValue="2" itemLabel="Item 2" />
-        </h:selectOneListbox>
+        <h:form>
+        <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5" columnClasses="label, value">
+
+            <p:outputLabel for="room" value="Room:" />
+            <p:selectOneListbox id="room" value="#{selectOneView.rooms}" var="t" filter="true" filterMatchMode="contains">
+                <f:selectItems value="#{selectOneView.rooms}" var="theme" itemLabel="#{theme.MName}" itemValue="#{theme}" />
+
+                <p:column>
+                    <h:outputText styleClass="ui-theme ui-theme-#{t.MName}" />
+                </p:column>
+
+                <p:column>
+                    <h:outputText value="#{t.MName}" />
+                </p:column>
+            </p:selectOneListbox>
+
+            <p:outputLabel for="material" value="Material:" />
+            <p:selectOneListbox id="material" value="#{selectOneView.materials}" var="t" filter="true" filterMatchMode="contains">
+                <f:selectItems value="#{selectOneView.materials}" var="theme" itemLabel="#{theme.MName}" itemValue="#{theme}" />
+
+                <p:column>
+                    <h:outputText styleClass="ui-theme ui-theme-#{t.MName}" />
+                </p:column>
+
+                <p:column>
+                    <h:outputText value="#{t.MName}" />
+                </p:column>
+            </p:selectOneListbox>
+
+        </h:panelGrid>
+            <p:separator />
+
+            <p:commandButton value="Submit" icon="ui-icon-check" />
+
+        </h:form>
     </ui:define>
 
 </ui:composition>
