@@ -56,6 +56,7 @@ public abstract class GenericServices<T> {
     }
 
 
+
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public Response update(T t) {
