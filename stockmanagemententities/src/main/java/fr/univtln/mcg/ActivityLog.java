@@ -22,9 +22,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(builderMethodName = "nameBuilder")
-@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = CActivityLog.class)
-@NamedQuery(name="CActivityLog.findAll", query="SELECT a FROM CActivityLog a")
-public class CActivityLog {
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = ActivityLog.class)
+@NamedQuery(name="ActivityLog.findAll", query="SELECT a FROM ActivityLog a")
+public class ActivityLog {
 
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "ACTIVITY_LOG_GEN")
@@ -34,9 +34,9 @@ public class CActivityLog {
 
     @OneToMany(cascade = CascadeType.ALL)
     @Valid
-    private List<CActivity> mActivityLog;
+    private List<Activity> mActivityLog;
 
-    public static CActivityLog.CActivityLogBuilder builder(List<CActivity> pActivityLog) {
+    public static ActivityLog.ActivityLogBuilder builder(List<Activity> pActivityLog) {
         return nameBuilder().mActivityLog(pActivityLog);
     }
 }

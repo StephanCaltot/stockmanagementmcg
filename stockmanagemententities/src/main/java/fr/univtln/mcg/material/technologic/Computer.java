@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
 /**
  * Created by screetts on 28/11/16.
  */
-@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = CComputer.class)
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = Computer.class)
 @Entity
 @Table(schema = "stock")
 
@@ -22,8 +22,8 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(builderMethodName = "touchBuilder")
-@NamedQuery(name="CComputer.findAll", query="SELECT c FROM CComputer c")
-public class CComputer extends CTechnologic {
+@NamedQuery(name="Computer.findAll", query="SELECT c FROM Computer c")
+public class Computer extends Technologic {
 
     @NotNull
     private boolean mTouch;

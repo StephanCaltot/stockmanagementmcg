@@ -8,19 +8,19 @@
     <persistence-unit name="stockmanagement" transaction-type="JTA">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <jta-data-source>jdbc/postgres-pool</jta-data-source>
-        <class>fr.univtln.mcg.CPerson</class>
-        <class>fr.univtln.mcg.CRoom</class>
-        <class>fr.univtln.mcg.CActivity</class>
-        <class>fr.univtln.mcg.CActivityLog</class>
-        <class>fr.univtln.mcg.material.CMaterial</class>
-        <class>fr.univtln.mcg.material.pedagogic.CArmChair</class>
-        <class>fr.univtln.mcg.material.pedagogic.CBoard</class>
-        <class>fr.univtln.mcg.material.pedagogic.CChalk</class>
-        <class>fr.univtln.mcg.material.pedagogic.CPedagogic</class>
-        <class>fr.univtln.mcg.material.technologic.CComputer</class>
-        <class>fr.univtln.mcg.material.technologic.COverheadProjector</class>
-        <class>fr.univtln.mcg.material.technologic.CTechnologic</class>
-        <class>fr.univtln.mcg.material.technologic.CWorkPhone</class>
+        <class>fr.univtln.mcg.Person</class>
+        <class>fr.univtln.mcg.Room</class>
+        <class>fr.univtln.mcg.Activity</class>
+        <class>fr.univtln.mcg.ActivityLog</class>
+        <class>fr.univtln.mcg.material.Material</class>
+        <class>fr.univtln.mcg.material.pedagogic.ArmChair</class>
+        <class>fr.univtln.mcg.material.pedagogic.Board</class>
+        <class>fr.univtln.mcg.material.pedagogic.Chalk</class>
+        <class>fr.univtln.mcg.material.pedagogic.Educational</class>
+        <class>fr.univtln.mcg.material.technologic.Computer</class>
+        <class>fr.univtln.mcg.material.technologic.OverheadProjector</class>
+        <class>fr.univtln.mcg.material.technologic.Technologic</class>
+        <class>fr.univtln.mcg.material.technologic.WorkPhone</class>
 
         <properties>
             <property name="javax.persistence.schema-generation.database.action"
@@ -37,8 +37,8 @@
             <!--property name="javax.persistence.schema-generation.create-script-source"
                       value="META-INF/sql/create.sql" /-->
 
-            <property name="javax.persistence.sql-load-script-source"
-                      value="META-INF/sql/data.sql" />
+            <!--<property name="javax.persistence.sql-load-script-source"-->
+                      <!--value="META-INF/sql/data.sql" />-->
 
             <property name="javax.persistence.schema-generation.drop-source"
                       value="metadata" />

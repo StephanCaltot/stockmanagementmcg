@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
 /**
  * Created by screetts on 28/11/16.
  */
-@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = COverheadProjector.class)
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = OverheadProjector.class)
 @Entity
 @Table(schema = "stock")
 
@@ -22,8 +22,8 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(builderMethodName = "hdBuilder")
-@NamedQuery(name="COverheadProjector.findAll", query="SELECT p FROM COverheadProjector p")
-public class COverheadProjector extends CTechnologic {
+@NamedQuery(name="OverheadProjector.findAll", query="SELECT o FROM OverheadProjector o")
+public class OverheadProjector extends Technologic {
 
     @NotNull
     private boolean mHd;
