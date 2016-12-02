@@ -2,6 +2,9 @@ package fr.univtln.mcg.material.technologic;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import fr.univtln.mcg.Room;
+import fr.univtln.mcg.enums.ETechnologicBrands;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,19 +17,25 @@ import javax.validation.constraints.NotNull;
 /**
  * Created by screetts on 28/11/16.
  */
-@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = Computer.class)
+//@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = Computer.class)
 @Entity
 @Table(schema = "stock")
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder(builderMethodName = "touchBuilder")
 @NamedQuery(name="Computer.findAll", query="SELECT c FROM Computer c")
+@JsonDeserialize(as = Computer.class)
 public class Computer extends Technologic {
 
     @NotNull
-    private boolean mTouch;
+    private boolean touch;
+
+    @Builder
+    public Computer(boolean touch, ETechnologicBrands brand, Room room) {
+        super(room, brand);
+        this.touch = touch;
+    }
 
 
 }

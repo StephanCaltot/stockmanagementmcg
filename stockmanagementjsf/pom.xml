@@ -140,8 +140,16 @@
         <dependency>
             <groupId>fr.univtln.mcg</groupId>
             <artifactId>stockmanagemententities</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0-jsf-SNAPSHOT</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-client -->
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>1.19.3</version>
+        </dependency>
+
         <dependency>
         <groupId>org.jboss.resteasy</groupId>
         <artifactId>resteasy-client</artifactId>

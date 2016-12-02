@@ -1,9 +1,14 @@
 package fr.univtln.mcg.material;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.*;
 import fr.univtln.mcg.Room;
+import fr.univtln.mcg.material.pedagogic.Educational;
+import fr.univtln.mcg.material.technologic.Computer;
+import fr.univtln.mcg.material.technologic.OverheadProjector;
+import fr.univtln.mcg.material.technologic.Technologic;
+import fr.univtln.mcg.material.technologic.WorkPhone;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
@@ -38,10 +43,17 @@ import java.io.Serializable;
         @NamedQuery(name = "Material.findAll", query = "select material from Material material")
 })
 @DiscriminatorColumn(name = "material_type")
-@JsonTypeInfo(use=JsonTypeInfo.Id.CLASS, include= JsonTypeInfo.As.PROPERTY, property="@class")
-@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, scope = Material.class)
+@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id", scope = Material.class)
+@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
+/*@JsonSubTypes({@JsonSubTypes.Type(value = Educational.class, name = "Educational"),
+               @JsonSubTypes.Type(value = Technologic.class, name = "Technologic"),
+                @JsonSubTypes.Type(value = Computer.class, name = "Computer"),
+               @JsonSubTypes.Type(value = OverheadProjector.class, name = "OverheadProjector"),
+               @JsonSubTypes.Type(value = WorkPhone.class, name = "WorkPhone")})
+*/
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(schema = "stock")
 public abstract class Material implements Serializable{
     @Id
@@ -54,5 +66,10 @@ public abstract class Material implements Serializable{
     @ManyToOne (cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinColumn(name="ROOM_ID")
     @NotNull
-    private Room mRoom;
+    private Room room;
+
+   public Material(Room room)
+   {
+       this.room = room;
+   }
 }

@@ -4,8 +4,8 @@ package fr.univtln.mcg.jsf;
  * Created by jlng on 30/11/16.
  */
 
-import fr.univtln.mcg.CRoom;
-import fr.univtln.mcg.material.CMaterial;
+import fr.univtln.mcg.Room;
+import fr.univtln.mcg.material.Material;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -15,14 +15,14 @@ import java.util.List;
 
 @ManagedBean
 public class SelectOneView {
-    private List<CRoom> rooms;
-    private List<CMaterial> materials;
+    private List<Room> rooms;
+    private List<Material> materials;
 
     @ManagedProperty("#{roomService}")
-    private CRoomService serviceRoom;
+    private RoomService serviceRoom;
 
     @ManagedProperty("#{materialService}")
-    private CMaterialService serviceMaterials;
+    private MaterialService serviceMaterials;
 
     @PostConstruct
     public void init() {
@@ -31,19 +31,19 @@ public class SelectOneView {
 
     }
 
-    public List<CRoom> getRooms() {
+    public List<Room> getRooms() {
         return rooms;
     }
 
-    public void setServiceRoom(CRoomService service) {
+    public void setServiceRoom(RoomService service) {
         this.serviceRoom = service;
     }
 
-    public List<CMaterial> getMaterials() {
+    public List<Material> getMaterials() {
         return materials;
     }
 
-    public void setServiceMaterials(CMaterialService service) {
+    public void setServiceMaterials(MaterialService service) {
         this.serviceMaterials = service;
     }
 }

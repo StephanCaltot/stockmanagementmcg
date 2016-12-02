@@ -1,6 +1,7 @@
 package fr.univtln.mcg.jsf;
 
-import fr.univtln.mcg.CRoom;
+
+import fr.univtln.mcg.Room;
 
 import java.io.Serializable;
 import java.util.List;
@@ -17,21 +18,21 @@ import javax.faces.bean.ViewScoped;
 @ViewScoped
 public class DataScrollerViewRoom implements Serializable {
 
-    private List<CRoom> rooms;
+    private List<Room> rooms;
 
     @ManagedProperty("#{roomService}")
-    private CRoomService service;
+    private RoomService service;
 
     @PostConstruct
     public void init() {
         rooms = service.createRooms();
     }
 
-    public List<CRoom> getRooms() {
+    public List<Room> getRooms() {
         return rooms;
     }
 
-    public void setService(CRoomService service) {
+    public void setService(RoomService service) {
         this.service = service;
     }
 }

@@ -46,7 +46,7 @@ public class Room {
     @NotNull
     private ERoomTypes mType;
 
-    @OneToMany(mappedBy="mRoom", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @OneToMany(mappedBy="room", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @NotNull
     @Valid
     @Size(max=50)
