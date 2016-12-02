@@ -41,19 +41,19 @@ public class Room {
 
     @NotNull
     @Size(min=2, max=5)
-    private String mName;
+    private String name;
 
     @NotNull
-    private ERoomTypes mType;
+    private ERoomTypes type;
 
     @OneToMany(mappedBy="room", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @NotNull
     @Valid
     @Size(max=50)
-    private List<Material> mMateriels;
+    private List<Material> materiels;
 
-    public static RoomBuilder builder(String pName, ERoomTypes pType) {
-        return nameBuilder().mName(pName).mType(pType);
+    public static RoomBuilder builder(String name, ERoomTypes type) {
+        return nameBuilder().name(name).type(type);
     }
 
 }

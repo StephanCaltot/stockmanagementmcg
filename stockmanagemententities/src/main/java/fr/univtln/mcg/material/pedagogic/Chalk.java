@@ -27,5 +27,5 @@ import javax.validation.constraints.NotNull;
 public class Chalk extends Educational {
 
     @NotNull
-    private EChalkColors mColor;
+    private EChalkColors color;
 }

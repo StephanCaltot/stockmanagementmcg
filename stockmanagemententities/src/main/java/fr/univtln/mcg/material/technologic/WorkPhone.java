@@ -27,5 +27,5 @@ import javax.validation.constraints.NotNull;
 public class WorkPhone extends Technologic {
 
     @NotNull
-    private EWorkPhoneOs mOs;
+    private EWorkPhoneOs os;
 }

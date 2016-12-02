@@ -34,9 +34,9 @@ public class ActivityLog {
 
     @OneToMany(cascade = CascadeType.ALL)
     @Valid
-    private List<Activity> mActivityLog;
+    private List<Activity> activityLog;
 
-    public static ActivityLog.ActivityLogBuilder builder(List<Activity> pActivityLog) {
-        return nameBuilder().mActivityLog(pActivityLog);
+    public static ActivityLog.ActivityLogBuilder builder(List<Activity> activityLog) {
+        return nameBuilder().activityLog(activityLog);
     }
 }

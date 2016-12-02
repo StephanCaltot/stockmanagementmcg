@@ -12,27 +12,27 @@
 
             <p:outputLabel for="room" value="Room:" />
             <p:selectOneListbox id="room" value="#{selectOneView.rooms}" var="t" filter="true" filterMatchMode="contains">
-                <f:selectItems value="#{selectOneView.rooms}" var="theme" itemLabel="#{theme.MName}" itemValue="#{theme}" />
+                <f:selectItems value="#{selectOneView.rooms}" var="theme" itemLabel="#{theme.name}" itemValue="#{theme}" />
 
                 <p:column>
-                    <h:outputText styleClass="ui-theme ui-theme-#{t.MName}" />
+                    <h:outputText styleClass="ui-theme ui-theme-#{t.name}" />
                 </p:column>
 
                 <p:column>
-                    <h:outputText value="#{t.MName}" />
+                    <h:outputText value="#{t.name}" />
                 </p:column>
             </p:selectOneListbox>
 
             <p:outputLabel for="material" value="Material:" />
-            <p:selectOneListbox id="material" value="#{selectOneView.materials}" var="t" filter="true" filterMatchMode="contains">
-                <f:selectItems value="#{selectOneView.materials}" var="theme" itemLabel="#{theme.MName}" itemValue="#{theme}" />
+            <p:selectOneListbox id="material" value="#{selectOneView.materials}" var="t2" filter="true" filterMatchMode="contains">
+                <f:selectItems value="#{selectOneView.materials}" var="material" itemLabel="#{material.id}" itemValue="#{material}" />
 
                 <p:column>
-                    <h:outputText styleClass="ui-theme ui-theme-#{t.MName}" />
+                    <h:outputText styleClass="ui-theme ui-theme-#{t2.id}" />
                 </p:column>
 
                 <p:column>
-                    <h:outputText value="#{t.MName}" />
+                    <h:outputText value="#{t2.room.name}" />
                 </p:column>
             </p:selectOneListbox>
 

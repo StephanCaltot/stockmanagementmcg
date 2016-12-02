@@ -27,6 +27,6 @@ import javax.validation.constraints.NotNull;
 public class ArmChair extends Educational {
 
     @NotNull
-    private EArmChairTypes mType;
+    private EArmChairTypes type;
 
 }

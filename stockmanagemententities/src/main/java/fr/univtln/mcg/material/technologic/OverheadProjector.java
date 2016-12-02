@@ -26,6 +26,6 @@ import javax.validation.constraints.NotNull;
 public class OverheadProjector extends Technologic {
 
     @NotNull
-    private boolean mHd;
+    private boolean hd;
 
 }

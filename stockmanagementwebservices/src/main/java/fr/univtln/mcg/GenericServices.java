@@ -1,17 +1,17 @@
 package fr.univtln.mcg;
 
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JavaType;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import fr.univtln.mcg.dao.CrudService;
+import org.codehaus.jackson.JsonProcessingException;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.type.TypeReference;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.io.IOException;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -47,7 +47,7 @@ public abstract class GenericServices<T> {
 
 
     @GET
-    public Response findAll() throws JsonProcessingException {
+    public Response findAll() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         List<T> t = crudService.findWithNamedQuery(getType().getSimpleName() + ".findAll");
 
