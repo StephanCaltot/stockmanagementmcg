@@ -31,9 +31,9 @@ public class Board extends Educational {
     @Min(70)
     @Max(100)
     @NotNull
-    private int mSize;
+    private int size;
 
     @NotNull
-    private EBoardTypes mType;
+    private EBoardTypes type;
 
 }

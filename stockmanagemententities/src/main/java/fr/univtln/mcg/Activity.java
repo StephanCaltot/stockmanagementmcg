@@ -34,24 +34,24 @@ public class Activity implements Serializable{
     @ManyToOne (cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinColumn(name="PERSON_ID")
     @NotNull
-    private Person mPerson;
+    private Person person;
 
     @ManyToOne (cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinColumn(name="MATERIAL_ID")
     @NotNull
-    private Material mMaterial;
+    private Material material;
 
     @ManyToOne (cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinColumn(name="ROOM_ID")
     @NotNull
-    private Room mRoom;
+    private Room room;
 
 //    @Pattern(regexp="\\(\\d{3}\\)\\d{3}-\\d{4}")
-    private SimpleDateFormat mSdf = new SimpleDateFormat("dd/M/yyyy");
+    private SimpleDateFormat sdf = new SimpleDateFormat("dd/M/yyyy");
 
 
-    public static  Activity.ActivityBuilder builder(Person pPerson, Material pMaterial, Room pRoom, SimpleDateFormat pSdf) {
-        return allBuilder().mPerson(pPerson).mMaterial(pMaterial).mRoom(pRoom).mSdf(pSdf);
+    public static  ActivityBuilder builder(Person person, Material material, Room room, SimpleDateFormat sdf) {
+        return allBuilder().person(person).material(material).room(room).sdf(sdf);
     }
 
 }

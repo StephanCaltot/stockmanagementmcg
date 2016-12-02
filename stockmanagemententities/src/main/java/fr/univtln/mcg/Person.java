@@ -33,8 +33,8 @@ public class Person {
     @NotNull
     private String name;
 
-    public static Person.PersonBuilder builder(String pName) {
-        return nameBuilder().name(pName);
+    public static Person.PersonBuilder builder(String name) {
+        return nameBuilder().name(name);
     }
 
 }
