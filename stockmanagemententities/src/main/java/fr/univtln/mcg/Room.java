@@ -3,7 +3,7 @@ package fr.univtln.mcg;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import fr.univtln.mcg.enums.ERoomTypes;
-import fr.univtln.mcg.material.CMaterial;
+import fr.univtln.mcg.material.Material;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -30,9 +30,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(builderMethodName = "nameBuilder")
-@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = CRoom.class)
-@NamedQuery(name="CRoom.findAll", query="SELECT a FROM CRoom a")
-public class CRoom {
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = Room.class)
+@NamedQuery(name="Room.findAll", query="SELECT room FROM Room room")
+public class Room {
     @Id
     @NotNull
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "ROOM_GEN")
@@ -46,13 +46,13 @@ public class CRoom {
     @NotNull
     private ERoomTypes mType;
 
-    @OneToMany(mappedBy="mRoom", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy="room", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @NotNull
     @Valid
     @Size(max=50)
-    private List<CMaterial> mMateriels;
+    private List<Material> mMateriels;
 
-    public static CRoomBuilder builder(String pName, ERoomTypes pType) {
+    public static RoomBuilder builder(String pName, ERoomTypes pType) {
         return nameBuilder().mName(pName).mType(pType);
     }
 

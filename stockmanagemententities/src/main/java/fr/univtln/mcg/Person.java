@@ -20,9 +20,9 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(builderMethodName = "nameBuilder")
-@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = CPerson.class)
-@NamedQuery(name="CPerson.findAll", query="SELECT p FROM CPerson p")
-public class CPerson {
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = Person.class)
+@NamedQuery(name="Person.findAll", query="SELECT p FROM Person p")
+public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "PERSON_GEN")
@@ -33,7 +33,7 @@ public class CPerson {
     @NotNull
     private String name;
 
-    public static CPerson.CPersonBuilder builder(String pName) {
+    public static Person.PersonBuilder builder(String pName) {
         return nameBuilder().name(pName);
     }
 

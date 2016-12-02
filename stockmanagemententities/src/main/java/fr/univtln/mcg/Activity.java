@@ -2,13 +2,14 @@ package fr.univtln.mcg;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import fr.univtln.mcg.material.CMaterial;
+import fr.univtln.mcg.material.Material;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 
 /**
@@ -21,9 +22,9 @@ import java.text.SimpleDateFormat;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(builderMethodName = "allBuilder")
-@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = CActivity.class)
-@NamedQuery(name="CActivity.findAll", query="SELECT a FROM CActivity a")
-public class CActivity {
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = Activity.class)
+@NamedQuery(name="Activity.findAll", query="SELECT a FROM Activity a")
+public class Activity implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "ACTIVITY_GEN")
     @Column(name = "ID")
@@ -33,23 +34,23 @@ public class CActivity {
     @ManyToOne (cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinColumn(name="PERSON_ID")
     @NotNull
-    private CPerson mPerson;
+    private Person mPerson;
 
     @ManyToOne (cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinColumn(name="MATERIAL_ID")
     @NotNull
-    private CMaterial mMaterial;
+    private Material mMaterial;
 
     @ManyToOne (cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinColumn(name="ROOM_ID")
     @NotNull
-    private CRoom mRoom;
+    private Room mRoom;
 
 //    @Pattern(regexp="\\(\\d{3}\\)\\d{3}-\\d{4}")
     private SimpleDateFormat mSdf = new SimpleDateFormat("dd/M/yyyy");
 
 
-    public static  CActivity.CActivityBuilder builder(CPerson pPerson, CMaterial pMaterial, CRoom pRoom, SimpleDateFormat pSdf) {
+    public static  Activity.ActivityBuilder builder(Person pPerson, Material pMaterial, Room pRoom, SimpleDateFormat pSdf) {
         return allBuilder().mPerson(pPerson).mMaterial(pMaterial).mRoom(pRoom).mSdf(pSdf);
     }
 

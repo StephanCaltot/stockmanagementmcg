@@ -1,7 +1,6 @@
 package fr.univtln.mcg.jsf;
 
-import fr.univtln.mcg.CRoom;
-import fr.univtln.mcg.material.CMaterial;
+import fr.univtln.mcg.material.Material;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -18,21 +17,21 @@ import java.util.List;
 @ViewScoped
 public class DataScrollerViewMaterial implements Serializable {
 
-    private List<CMaterial> materials;
+    private List<Material> materials;
 
     @ManagedProperty("#{materialService}")
-    private CMaterialService service;
+    private MaterialService service;
 
     @PostConstruct
     public void init() {
         materials = service.createMaterials();
     }
 
-    public List<CMaterial> getMaterials() {
+    public List<Material> getMaterials() {
         return materials;
     }
 
-    public void setService(CMaterialService service) {
+    public void setService(MaterialService service) {
         this.service = service;
     }
 }

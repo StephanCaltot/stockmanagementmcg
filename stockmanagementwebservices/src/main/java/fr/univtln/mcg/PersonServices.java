@@ -9,7 +9,7 @@ import javax.ws.rs.core.MediaType;
 
 @Stateless
 @Produces(MediaType.APPLICATION_JSON)
-@Path("person")
-public class CPersonServices extends AGenericServices<CPerson> {
+@Path("people")
+public class PersonServices extends GenericServices<Person> {
 
 }
