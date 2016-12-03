@@ -21,9 +21,6 @@ import javax.persistence.*;
 @NamedQuery(name="Educational.findAll", query="SELECT e FROM Educational e")
 @JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property = "@id" ,scope = Educational.class)
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
-/*@JsonSubTypes({@JsonSubTypes.Type(value = Chalk.class, name = "Chalk"),
-               @JsonSubTypes.Type(value = Board.class, name = "Board"),
-               @JsonSubTypes.Type(value = ArmChair.class, name = "ArmChair"),})
-*/
+
 public abstract class Educational extends Material {
 }

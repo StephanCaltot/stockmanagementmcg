@@ -1,5 +1,6 @@
 package fr.univtln.mcg;
 
+
 import fr.univtln.mcg.material.technologic.Computer;
 
 import javax.ejb.Stateless;

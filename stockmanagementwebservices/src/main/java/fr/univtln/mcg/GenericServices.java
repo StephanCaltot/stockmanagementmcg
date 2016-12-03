@@ -2,13 +2,13 @@ package fr.univtln.mcg;
 
 
 import fr.univtln.mcg.dao.CrudService;
-import org.codehaus.jackson.JsonProcessingException;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.type.TypeReference;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.*;
+import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
@@ -48,34 +48,8 @@ public abstract class GenericServices<T> {
 
     @GET
     public Response findAll() throws IOException {
-        ObjectMapper mapper = new ObjectMapper();
         List<T> t = crudService.findWithNamedQuery(getType().getSimpleName() + ".findAll");
-
-        T tson = t.get(0);
-
-        String jsonson = mapper.writeValueAsString(tson);
-        System.out.println("json fils :\n" + jsonson);
-
-        String json = mapper.writerWithType(new TypeReference<List<T>>() {
-        }).writeValueAsString(t);
-        String className = getType().getName();
-        String interold = "\"@class\":\"fr.univtln.mcg.material.technologic.Computer\",";
-        String inter = "\"@class\":\"" + className + "\",";
-
-        System.out.println("json: \n" + json);
-        String str = new StringBuilder(json).insert(2, inter).toString();
-        System.out.println("strgitano :\n" + str);
-
-        int nboccur = t.size() - 1;
-        str = str.replace("true},{", "true},{"+inter);
-        str = str.replace("false},{", "false},{"+inter);
-
-        System.out.println("strgitano2 :\n" + str);
-
-
-
-        return Response.ok().entity(str).build();
-        //return t;
+        return Response.ok().entity(t).build();
     }
 
 

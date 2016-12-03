@@ -45,12 +45,7 @@ import java.io.Serializable;
 @DiscriminatorColumn(name = "material_type")
 @JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id", scope = Material.class)
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
-/*@JsonSubTypes({@JsonSubTypes.Type(value = Educational.class, name = "Educational"),
-               @JsonSubTypes.Type(value = Technologic.class, name = "Technologic"),
-                @JsonSubTypes.Type(value = Computer.class, name = "Computer"),
-               @JsonSubTypes.Type(value = OverheadProjector.class, name = "OverheadProjector"),
-               @JsonSubTypes.Type(value = WorkPhone.class, name = "WorkPhone")})
-*/
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

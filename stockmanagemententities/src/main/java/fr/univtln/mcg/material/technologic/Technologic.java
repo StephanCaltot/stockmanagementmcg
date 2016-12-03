@@ -28,9 +28,7 @@ import javax.validation.constraints.NotNull;
 @DiscriminatorValue(value = "technologic")
 @JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property = "@id" ,scope = Technologic.class)
 @JsonTypeInfo(use= JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY,property="@class")
-/*@JsonSubTypes({@JsonSubTypes.Type(value = Computer.class, name = "Computer"),
-        @JsonSubTypes.Type(value = OverheadProjector.class, name = "OverheadProjector"),
-        @JsonSubTypes.Type(value = WorkPhone.class, name = "WorkPhone"),})*/
+
 public abstract class Technologic extends Material {
 
     @NotNull
