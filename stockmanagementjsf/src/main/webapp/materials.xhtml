@@ -18,15 +18,31 @@
             Scroll Down to Load More Cars
         </f:facet>
 
-        <h:panelGrid columns="2" style="width:100%" columnClasses="logo,detail">
+        <h:panelGrid columns="2" style="width:100%" columnClasses="logo,detail" >
 
-            <p:outputPanel>
-                <h:panelGrid columns="2" cellpadding="5">
+            <p:outputPanel >
+                <p:separator />
+
+                <h:panelGrid columns="2" cellpadding="5" rendered="#{material['class'].simpleName eq 'Computer'}">
                     <h:outputText value="Id:" />
                     <h:outputText value="#{material.id}" style="font-weight: bold"/>
 
                     <h:outputText value="Room:" />
                     <h:outputText value="#{material.room.name}" style="font-weight: bold"/>
+
+                    <h:outputText value="Brand:" />
+                    <h:outputText value="#{material.brand}" style="font-weight: bold"/>
+
+                </h:panelGrid>
+                <h:panelGrid columns="2" cellpadding="5" rendered="#{material['class'].simpleName eq 'Chalk'}">
+                    <h:outputText value="Id:" />
+                    <h:outputText value="#{material.id}" style="font-weight: bold"/>
+
+                    <h:outputText value="Room:" />
+                    <h:outputText value="#{material.room.name}" style="font-weight: bold"/>
+
+                    <h:outputText value="Couleur:" />
+                    <h:outputText value="#{material.color}" style="font-weight: bold"/>
 
                 </h:panelGrid>
             </p:outputPanel>

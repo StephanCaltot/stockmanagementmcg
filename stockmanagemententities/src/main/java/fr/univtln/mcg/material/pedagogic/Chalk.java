@@ -2,6 +2,7 @@ package fr.univtln.mcg.material.pedagogic;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import fr.univtln.mcg.Room;
 import fr.univtln.mcg.enums.EChalkColors;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,10 +23,15 @@ import javax.validation.constraints.NotNull;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder(builderMethodName = "colorBuilder")
 @NamedQuery(name="Chalk.findAll", query="SELECT c FROM Chalk c")
 public class Chalk extends Educational {
 
     @NotNull
     private EChalkColors color;
+
+    @Builder
+    public Chalk (EChalkColors color, Room room) {
+        super(room);
+        this.color = color;
+    }
 }

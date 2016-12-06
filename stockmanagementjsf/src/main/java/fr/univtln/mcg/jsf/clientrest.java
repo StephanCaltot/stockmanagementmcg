@@ -9,10 +9,12 @@ import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 import fr.univtln.mcg.Room;
+import fr.univtln.mcg.enums.EChalkColors;
 import fr.univtln.mcg.enums.ERoomTypes;
 import fr.univtln.mcg.enums.ETechnologicBrands;
 import fr.univtln.mcg.material.Material;
 
+import fr.univtln.mcg.material.pedagogic.Chalk;
 import fr.univtln.mcg.material.technologic.Computer;
 
 import javax.ws.rs.core.MediaType;
@@ -36,15 +38,7 @@ public class clientrest {
 
         Material computer = Computer.builder().touch(true).brand(ETechnologicBrands.ASUS).room(room3).build();
         Material computer2 = Computer.builder().touch(false).brand(ETechnologicBrands.ASUS).room(room4).build();
-
-        //computer.setMTouch(true);
-        //computer.setMBrand(ETechnologicBrands.EPSON);
-        //computer.setMRoom(room3);
-
-        //Computer computer2 = new Computer();
-        //computer2.setMTouch(true);
-        //computer2.setMBrand(ETechnologicBrands.ASUS);
-        //computer2.setMRoom(room2);
+        Material chalk = Chalk.builder().color(EChalkColors.WHITE).room(room2).build();
 
         webResource.path("rooms").type(MediaType.APPLICATION_JSON).post(room);
         webResource.path("rooms").type(MediaType.APPLICATION_JSON).post(room2);
@@ -53,13 +47,6 @@ public class clientrest {
 
         webResource.path("computers").type(MediaType.APPLICATION_JSON).post(computer);
         webResource.path("computers").type(MediaType.APPLICATION_JSON).post(computer2);
-        //List<Material> mat = new ArrayList<>();
-        //String json =
 
-
-       /* ObjectMapper mapper = new ObjectMapper();
-        String json = mapper.writerWithType(new TypeReference<List<Material>>() {
-        }).writeValueAsString(materials);
-        System.out.println("json: \n" + json);
-    */}
+    }
 }
