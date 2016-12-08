@@ -17,7 +17,7 @@ import javax.validation.constraints.NotNull;
 /**
  * Created by screetts on 28/11/16.
  */
-//@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = Computer.class)
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = Computer.class)
 @Entity
 @Table(schema = "stock")
 
