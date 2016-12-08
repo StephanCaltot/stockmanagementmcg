@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Android Client</string>
+
+    <string name="android_client_open">Open android client</string>
+    <string name="android_client_close">Close android client drawer</string>
+    <string name="openClient">open_client</string>
+    <string name="closeClient">close_client</string>
+
+    <!-- Navigation Drawer menu labels -->
+    <string name="nav_rooms">Rooms</string>
+    <string name="nav_materials">Materials</string>
+    <string name="nav_assignations">New Assign</string>
+
+    <!-- Toolbar titles when navigation menu item is selected -->
+    <string-array name="nav_item_activity_titles">
+        <item>Rooms</item>
+        <item>Materials</item>
+        <item>New Assign</item>
+    </string-array>
+
+    <string name="action_clear_all">Clear All</string>
+    <string name="action_logout">Logout</string>
+    <string name="action_mark_all_read">Mark All as Read</string>
+</resources>

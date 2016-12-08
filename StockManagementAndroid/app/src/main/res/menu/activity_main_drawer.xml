@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_rooms"
+            android:icon="@drawable/ic_local_movies_black_24dp"
+            android:title="@string/nav_rooms" />
+
+        <item
+            android:id="@+id/nav_materials"
+            android:icon="@drawable/ic_notifications_black_24dp"
+            android:title="@string/nav_materials" />
+
+        <item
+            android:id="@+id/nav_assignations"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="@string/nav_assignations" />
+    </group>
+
+    <item android:title="Other">
+        <menu>
+            <item
+                android:id="@+id/nav_about_us"
+                android:title="What else ?" />
+        </menu>
+    </item>
+
+</menu>
