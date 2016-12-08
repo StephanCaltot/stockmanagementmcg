@@ -28,6 +28,8 @@ import javax.validation.constraints.NotNull;
 @JsonDeserialize(as = Computer.class)
 public class Computer extends Technologic {
 
+    public static final String GET_ALL = "Computer.findAll";
+
     @NotNull
     private boolean touch;
 

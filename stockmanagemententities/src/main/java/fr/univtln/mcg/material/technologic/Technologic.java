@@ -31,6 +31,8 @@ import javax.validation.constraints.NotNull;
 
 public abstract class Technologic extends Material {
 
+    public static final String GET_ALL = "Technologic.findAll";
+
     @NotNull
     private ETechnologicBrands brand;
 

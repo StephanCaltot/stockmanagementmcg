@@ -25,6 +25,8 @@ import javax.validation.constraints.NotNull;
 @NamedQuery(name="OverheadProjector.findAll", query="SELECT o FROM OverheadProjector o")
 public class OverheadProjector extends Technologic {
 
+    public static final String GET_ALL = "OverheadProjector.findAll";
+
     @NotNull
     private boolean hd;
 

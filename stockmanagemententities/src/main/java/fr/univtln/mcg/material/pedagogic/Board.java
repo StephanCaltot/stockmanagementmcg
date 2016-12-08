@@ -28,6 +28,8 @@ import javax.validation.constraints.NotNull;
 @NamedQuery(name="Board.findAll", query="SELECT b FROM Board b")
 public class Board extends Educational {
 
+    public static final String GET_ALL = "Board.findAll";
+
     @Min(70)
     @Max(100)
     @NotNull

@@ -25,6 +25,9 @@ import java.text.SimpleDateFormat;
 @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = Activity.class)
 @NamedQuery(name="Activity.findAll", query="SELECT a FROM Activity a")
 public class Activity implements Serializable{
+
+    public static final String GET_ALL = "Activity.findAll";
+
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "ACTIVITY_GEN")
     @Column(name = "ID")

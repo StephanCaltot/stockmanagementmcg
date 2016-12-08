@@ -23,4 +23,6 @@ import javax.persistence.*;
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
 
 public abstract class Educational extends Material {
+
+    public static final String GET_ALL = "Educational.findAll";
 }

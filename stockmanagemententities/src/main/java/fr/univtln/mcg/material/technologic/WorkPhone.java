@@ -26,6 +26,8 @@ import javax.validation.constraints.NotNull;
 @NamedQuery(name="WorkPhone.findAll", query="SELECT w FROM WorkPhone w")
 public class WorkPhone extends Technologic {
 
+    public static final String GET_ALL = "WorkPhone.findAll";
+
     @NotNull
     private EWorkPhoneOs os;
 }

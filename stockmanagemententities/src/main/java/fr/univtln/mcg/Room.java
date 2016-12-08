@@ -33,6 +33,9 @@ import java.util.List;
 @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = Room.class)
 @NamedQuery(name="Room.findAll", query="SELECT room FROM Room room")
 public class Room {
+
+    public static final String GET_ALL = "Room.findAll";
+
     @Id
     @NotNull
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "ROOM_GEN")

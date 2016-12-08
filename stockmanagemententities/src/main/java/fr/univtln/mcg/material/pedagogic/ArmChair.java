@@ -26,6 +26,8 @@ import javax.validation.constraints.NotNull;
 @NamedQuery(name="ArmChair.findAll", query="SELECT a FROM ArmChair a")
 public class ArmChair extends Educational {
 
+    public static final String GET_ALL = "ArmChair.findAll";
+
     @NotNull
     private EArmChairTypes type;
 

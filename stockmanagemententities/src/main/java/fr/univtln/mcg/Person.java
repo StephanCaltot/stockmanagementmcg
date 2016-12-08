@@ -24,6 +24,8 @@ import javax.validation.constraints.Size;
 @NamedQuery(name="Person.findAll", query="SELECT p FROM Person p")
 public class Person {
 
+    public static final String GET_ALL = "Person.findAll";
+
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "PERSON_GEN")
     @Column(name = "ID")

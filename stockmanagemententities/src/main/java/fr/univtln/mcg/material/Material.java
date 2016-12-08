@@ -51,6 +51,9 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Table(schema = "stock")
 public abstract class Material implements Serializable{
+
+    public static final String GET_ALL = "Material.findAll";
+
     @Id
     @NotNull
     @TableGenerator(name = "itemGenerator",allocationSize = 1, initialValue = 1)
