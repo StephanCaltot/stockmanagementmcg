@@ -24,7 +24,7 @@ import javax.validation.constraints.NotNull;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@NamedQuery(name="Computer.findAll", query="SELECT c FROM Computer c")
+@NamedQuery(name=Computer.GET_ALL, query="SELECT c FROM Computer c")
 @JsonDeserialize(as = Computer.class)
 public class Computer extends Technologic {
 

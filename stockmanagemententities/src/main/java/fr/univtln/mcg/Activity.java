@@ -23,7 +23,7 @@ import java.text.SimpleDateFormat;
 @AllArgsConstructor
 @Builder(builderMethodName = "allBuilder")
 @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = Activity.class)
-@NamedQuery(name="Activity.findAll", query="SELECT a FROM Activity a")
+@NamedQuery(name=Activity.GET_ALL, query="SELECT a FROM Activity a")
 public class Activity implements Serializable{
 
     public static final String GET_ALL = "Activity.findAll";

@@ -25,7 +25,7 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(builderMethodName = "typeBuilder")
-@NamedQuery(name="Board.findAll", query="SELECT b FROM Board b")
+@NamedQuery(name=Board.GET_ALL, query="SELECT b FROM Board b")
 public class Board extends Educational {
 
     public static final String GET_ALL = "Board.findAll";

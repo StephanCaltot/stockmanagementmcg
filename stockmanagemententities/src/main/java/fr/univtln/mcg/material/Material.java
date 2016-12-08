@@ -40,7 +40,7 @@ import java.io.Serializable;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @NamedQueries({
-        @NamedQuery(name = "Material.findAll", query = "select material from Material material")
+        @NamedQuery(name = Material.GET_ALL, query = "select material from Material material")
 })
 @DiscriminatorColumn(name = "material_type")
 @JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id", scope = Material.class)

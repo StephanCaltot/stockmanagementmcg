@@ -26,7 +26,7 @@ public class MaterialService {
 
     public List<Material> createMaterials()  {
         ResteasyClient client = new ResteasyClientBuilder().build();
-        ResteasyWebTarget target = client.target("http://localhost:8080/stockmanagementwebservices/webresources/materials");
+        ResteasyWebTarget target = client.target("http://localhost:8080/stockmanagementwebservices/webresources/materials/all");
         Response response = target.request().get();
         String value = response.readEntity(String.class);
         ObjectMapper mapper = new ObjectMapper();

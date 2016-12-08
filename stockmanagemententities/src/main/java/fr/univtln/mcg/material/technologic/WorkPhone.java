@@ -2,6 +2,7 @@ package fr.univtln.mcg.material.technologic;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.sun.xml.internal.ws.api.pipe.FiberContextSwitchInterceptor;
 import fr.univtln.mcg.enums.EWorkPhoneOs;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,7 +24,7 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(builderMethodName = "osBuilder")
-@NamedQuery(name="WorkPhone.findAll", query="SELECT w FROM WorkPhone w")
+@NamedQuery(name=WorkPhone.GET_ALL, query="SELECT w FROM WorkPhone w")
 public class WorkPhone extends Technologic {
 
     public static final String GET_ALL = "WorkPhone.findAll";

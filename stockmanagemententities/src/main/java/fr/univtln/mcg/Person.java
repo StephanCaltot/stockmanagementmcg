@@ -21,7 +21,7 @@ import javax.validation.constraints.Size;
 @AllArgsConstructor
 @Builder(builderMethodName = "nameBuilder")
 @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = Person.class)
-@NamedQuery(name="Person.findAll", query="SELECT p FROM Person p")
+@NamedQuery(name=Person.GET_ALL, query="SELECT p FROM Person p")
 public class Person {
 
     public static final String GET_ALL = "Person.findAll";
