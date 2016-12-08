@@ -1,12 +1,12 @@
 package fr.univtln.mcg;
 
-import fr.univtln.mcg.material.CMaterial;
+import fr.univtln.mcg.material.Material;
 
 /**
  * Created by marti on 28/11/2016.
  */
 
-public class CMaterialManagerBean extends CGenericManagerBean<CMaterial> {
+public class CMaterialManagerBean extends CGenericManagerBean<Material> {
 
     public CMaterialManagerBean(){
         super();

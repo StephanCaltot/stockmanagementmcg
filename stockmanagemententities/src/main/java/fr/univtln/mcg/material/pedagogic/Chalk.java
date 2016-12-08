@@ -23,8 +23,10 @@ import javax.validation.constraints.NotNull;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@NamedQuery(name="Chalk.findAll", query="SELECT c FROM Chalk c")
+@NamedQuery(name=Chalk.GET_ALL, query="SELECT c FROM Chalk c")
 public class Chalk extends Educational {
+
+    public static final String GET_ALL = "Chalk.findAll";
 
     @NotNull
     private EChalkColors color;

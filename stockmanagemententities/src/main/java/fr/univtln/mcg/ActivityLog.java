@@ -23,8 +23,10 @@ import java.util.List;
 @AllArgsConstructor
 @Builder(builderMethodName = "nameBuilder")
 @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = ActivityLog.class)
-@NamedQuery(name="ActivityLog.findAll", query="SELECT a FROM ActivityLog a")
+@NamedQuery(name = ActivityLog.GET_ALL, query="SELECT a FROM ActivityLog a")
 public class ActivityLog {
+
+    public static final String GET_ALL = "ActivityLog.findAll";
 
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "ACTIVITY_LOG_GEN")

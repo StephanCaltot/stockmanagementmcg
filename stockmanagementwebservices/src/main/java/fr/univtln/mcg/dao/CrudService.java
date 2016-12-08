@@ -1,11 +1,14 @@
 package fr.univtln.mcg.dao;
 
+import javax.ejb.Local;
 import java.util.List;
 import java.util.Map;
 
 /**
  * Created by bruno on 31/10/15.
  */
+
+@Local
 public interface CrudService<T> {
     public T create(T t);
 
