@@ -8,14 +8,30 @@
 
     <ui:define name="bodyContent">
         <h:form>
-            <p:multiSelectListbox value="#{multiSelectView.selection}" effect="slide" header="Categories" showHeaders="true">
-                <f:selectItems value="#{multiSelectView.categories}" />
-            </p:multiSelectListbox>
+            <p:selectOneListbox value="#{multiSelectView.selectionMaterial}" effect="slide" header="Materials" showHeaders="true" converter="materialConverter">
+                <f:selectItems value="#{multiSelectView.materials}" />
+            </p:selectOneListbox>
 
-            <p:commandButton value="Save" icon="ui-icon-check" update="out" style="display:block;margin:10px 0" />
+            <p:selectOneListbox value="#{multiSelectView.selectionRoom}" effect="slide" header="Rooms" showHeaders="true" converter="roomConverter">
+                <f:selectItems value="#{multiSelectView.rooms}" />
+            </p:selectOneListbox>
 
-            <h:outputText id="out" value="Value: #{multiSelectView.selection}" style="display:block" />
+            <p:commandButton value="Save" update="display" oncomplete="PF('dlg').show()" icon="ui-icon-check" />
+
+            <p:dialog header="Selected Values" modal="true" showEffect="fade" widgetVar="dlg" resizable="false">
+                <p:panelGrid columns="2" id="display" columnClasses="label,output">
+                    <h:outputText value="Material:" />
+                    <h:outputText value="#{multiSelectView.selectionMaterial.room.name}" />
+                    <h:outputText value="Room:" />
+                    <h:outputText value="#{multiSelectView.selectionRoom.name}" />
+                    <p:commandButton ajax="false" value="Update" action="#{materialService.update(multiSelectView.selectionMaterial, multiSelectView.selectionRoom)}"/>
+
+
+                </p:panelGrid>
+            </p:dialog>
         </h:form>
     </ui:define>
+
+
 
 </ui:composition>

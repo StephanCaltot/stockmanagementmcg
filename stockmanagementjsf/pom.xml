@@ -140,14 +140,7 @@
         <dependency>
             <groupId>fr.univtln.mcg</groupId>
             <artifactId>stockmanagemententities</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-client -->
-        <dependency>
-            <groupId>com.sun.jersey</groupId>
-            <artifactId>jersey-client</artifactId>
-            <version>1.19.3</version>
+            <version>1.0-test_refactor_entities-SNAPSHOT</version>
         </dependency>
 
         <dependency>
@@ -155,12 +148,7 @@
         <artifactId>resteasy-client</artifactId>
         <version>3.0.2.Final</version>
     </dependency>
-        <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.8.0</version>
-        </dependency>
+
 
     </dependencies>
 

@@ -25,7 +25,7 @@ public class DataScrollerViewRoom implements Serializable {
 
     @PostConstruct
     public void init() {
-        rooms = service.createRooms();
+        rooms = service.create();
     }
 
     public List<Room> getRooms() {

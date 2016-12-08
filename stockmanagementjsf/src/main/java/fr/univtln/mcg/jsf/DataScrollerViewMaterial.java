@@ -24,7 +24,7 @@ public class DataScrollerViewMaterial implements Serializable {
 
     @PostConstruct
     public void init() {
-        materials = service.createMaterials();
+        materials = service.create();
     }
 
     public List<Material> getMaterials() {

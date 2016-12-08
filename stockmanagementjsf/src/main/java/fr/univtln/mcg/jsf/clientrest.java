@@ -31,15 +31,16 @@ public class clientrest {
         Client c = Client.create(cc);
         WebResource webResource = c.resource("http://localhost:8080/stockmanagementwebservices/webresources/");
 
-        Room room  = new Room(1,"U026", ERoomTypes.TP,new ArrayList<Material>());
-        Room room2 = new Room(2,"T003", ERoomTypes.TD,new ArrayList<Material>());
-        Room room3 = new Room(3,"Y001", ERoomTypes.AMPHI,new ArrayList<Material>());
-        Room room4 = new Room(4,"W107", ERoomTypes.TD,new ArrayList<Material>());
+        Room room  = new Room(1,"U026", ERoomTypes.TP);
+        Room room2 = new Room(2,"T003", ERoomTypes.TD);
+        Room room3 = new Room(3,"Y001", ERoomTypes.AMPHI);
+        Room room4 = new Room(4,"W107", ERoomTypes.TD);
 
         Material computer = Computer.builder().touch(true).brand(ETechnologicBrands.ASUS).room(room3).build();
         Material computer2 = Computer.builder().touch(false).brand(ETechnologicBrands.ASUS).room(room4).build();
         Material chalk = Chalk.builder().color(EChalkColors.WHITE).room(room2).build();
-
+        Material chalk2 = Chalk.builder().color(EChalkColors.RED).room(room3).build();
+/*
         webResource.path("rooms").type(MediaType.APPLICATION_JSON).post(room);
         webResource.path("rooms").type(MediaType.APPLICATION_JSON).post(room2);
         webResource.path("rooms").type(MediaType.APPLICATION_JSON).post(room3);
@@ -47,6 +48,8 @@ public class clientrest {
 
         webResource.path("computers").type(MediaType.APPLICATION_JSON).post(computer);
         webResource.path("computers").type(MediaType.APPLICATION_JSON).post(computer2);
+        webResource.path("chalks").type(MediaType.APPLICATION_JSON).post(chalk); */
+        webResource.path("chalks").type(MediaType.APPLICATION_JSON).post(chalk2);
 
     }
 }

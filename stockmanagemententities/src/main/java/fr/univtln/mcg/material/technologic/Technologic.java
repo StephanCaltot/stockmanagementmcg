@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 /**
  * Created by screetts on 28/11/16.
@@ -29,7 +30,7 @@ import javax.validation.constraints.NotNull;
 @JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property = "@id" ,scope = Technologic.class)
 @JsonTypeInfo(use= JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY,property="@class")
 
-public abstract class Technologic extends Material {
+public abstract class Technologic extends Material implements Serializable {
 
     @NotNull
     private ETechnologicBrands brand;

@@ -1,5 +1,6 @@
 package fr.univtln.mcg.jsf;
 
+import fr.univtln.mcg.Room;
 import fr.univtln.mcg.material.Material;
 
 import java.util.ArrayList;
@@ -7,6 +8,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.ViewScoped;
 import javax.faces.model.SelectItem;
 import javax.faces.model.SelectItemGroup;
 
@@ -15,25 +17,35 @@ import javax.faces.model.SelectItemGroup;
  * Created by jlng on 05/12/16.
  */
 @ManagedBean
+@ViewScoped
 public class MultiSelectView {
+
+    @ManagedProperty("#{materialService}")
+    private MaterialService serviceMaterial;
+
+    @ManagedProperty("#{roomService}")
+    private RoomService serviceRoom;
 
     private static List<SelectItem> categories = new ArrayList<SelectItem>();
     private static List<String> categoriesName = new ArrayList<String>();
 
     private List<Material> materials;
-    private List<List<Material>> listMaterials;
-    private String selection;
+    private Material selectionMaterial;
 
-    @ManagedProperty("#{materialService}")
-    private MaterialService service;
+    private List<Room> rooms;
+    private Room selectionRoom;
 
     @PostConstruct
     public void init() {
+        materials = serviceMaterial.create();
+        rooms = serviceRoom.create();
+        /*
         List<List<SelectItem>> test = new ArrayList<>();
+        categories = new ArrayList<SelectItem>();
+        categoriesName = new ArrayList<String>();
         SelectItem option;
-        materials = service.createMaterials();
         //getList(materials);
-        List cat = new ArrayList();
+        List<List> cat = new ArrayList();
         int pos;
         List<SelectItemGroup> groups = new ArrayList<>();
         for (Material o : materials)
@@ -42,12 +54,11 @@ public class MultiSelectView {
             if(! categoriesName.contains(className))
             {
                 groups.add(new SelectItemGroup(className));
-                //categories.add(groups.get(groups.size()));
                 categoriesName.add(className);
                 cat.add(new ArrayList<>());
                 test.add(new ArrayList<SelectItem>());
             }
-            pos = categoriesName.indexOf(o.getClass().getSimpleName());
+            pos = categoriesName.indexOf(className);
             ((List)cat.get(pos)).add(o);
             option = new SelectItem(o.toString());
             ((List)test.get(pos)).add(option);
@@ -57,45 +68,39 @@ public class MultiSelectView {
             groups.get(i).setSelectItems(test.get(i).toArray(new SelectItem[test.get(i).size()]));
         }
         categories.addAll(groups);
+        */
     }
 
-    public static void getList(List l)
-    {
-        //List categories = new ArrayList();
-        List cat = new ArrayList();
-        int pos;
-        SelectItemGroup group;;
-        for (Object o : l)
-        {
-            String className = o.getClass().getSimpleName();
-            if(! categories.contains(className))
-            {
-                group = new SelectItemGroup(o.getClass().getSimpleName());
-                categories.add(group);
-                cat.add(new ArrayList<>());
-            }
-            pos = categories.indexOf(o.getClass().getSimpleName());
-            ((List)cat.get(pos)).add(o);
-        }
-        //SelectItem option = new SelectItem("Option 1.2.3");
-
-//        groups.get(0).setSelectItems(new SelectItem[]{option});
-
+    public MaterialService getServiceMaterial() {
+        return serviceMaterial;
     }
 
-    public List<SelectItem> getCategories() {
+    public void setServiceMaterial(MaterialService serviceMaterial) {
+        this.serviceMaterial = serviceMaterial;
+    }
+
+    public RoomService getServiceRoom() {
+        return serviceRoom;
+    }
+
+    public void setServiceRoom(RoomService serviceRoom) {
+        this.serviceRoom = serviceRoom;
+    }
+
+    public static List<SelectItem> getCategories() {
         return categories;
-    }
-
-    public String getSelection() {
-        return selection;
-    }
-    public void setSelection(String selection) {
-        this.selection = selection;
     }
 
     public static void setCategories(List<SelectItem> categories) {
         MultiSelectView.categories = categories;
+    }
+
+    public static List<String> getCategoriesName() {
+        return categoriesName;
+    }
+
+    public static void setCategoriesName(List<String> categoriesName) {
+        MultiSelectView.categoriesName = categoriesName;
     }
 
     public List<Material> getMaterials() {
@@ -106,19 +111,27 @@ public class MultiSelectView {
         this.materials = materials;
     }
 
-    public List<List<Material>> getListMaterials() {
-        return listMaterials;
+    public Material getSelectionMaterial() {
+        return selectionMaterial;
     }
 
-    public void setListMaterials(List<List<Material>> listMaterials) {
-        this.listMaterials = listMaterials;
+    public void setSelectionMaterial(Material selectionMaterial) {
+        this.selectionMaterial = selectionMaterial;
     }
 
-    public MaterialService getService() {
-        return service;
+    public List<Room> getRooms() {
+        return rooms;
     }
 
-    public void setService(MaterialService service) {
-        this.service = service;
+    public void setRooms(List<Room> rooms) {
+        this.rooms = rooms;
+    }
+
+    public Room getSelectionRoom() {
+        return selectionRoom;
+    }
+
+    public void setSelectionRoom(Room selectionRoom) {
+        this.selectionRoom = selectionRoom;
     }
 }
