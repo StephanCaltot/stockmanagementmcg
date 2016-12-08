@@ -7,9 +7,11 @@ import com.example.screetts.stockmanagement.retrofit.IMaterialsService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.io.IOException;
 import java.util.List;
 
 import fr.univtln.mcg.material.Material;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -25,8 +27,7 @@ public class PresenterMaterials {
     public static final String BASE_URL = "http://10.21.143.57:8080";
     private MaterialsFragment view;
     private List<Material> materials;
-    private Material material;
-    private ObjectMapper objectMapper;
+    private ObjectMapper objectMapper = new ObjectMapper();
     Retrofit retrofit;
     IMaterialsService materialsService;
 
@@ -39,7 +40,6 @@ public class PresenterMaterials {
     }
 
     public void getMaterialsById(int id){
-        objectMapper = new ObjectMapper();
         Call<Material> call = materialsService.get(id);
         call.enqueue(new Callback<Material>() {
             @Override
@@ -61,13 +61,25 @@ public class PresenterMaterials {
 
 
 
-    public void getMaterialsAll(){
-        Call<String> call = materialsService.getAll();
-        call.enqueue(new Callback<String>() {
+    public List<Material> getMaterialsAll(){
+
+        Call<ResponseBody> call = materialsService.getAll();
+        Log.d("mat","je suis la nigaaaaaaaaaaaaaa");
+        call.enqueue(new Callback<ResponseBody>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                Log.d("mat","je suis la niga");
+
                 if (response.body() != null){
-//                    materials = objectMapper.readValues(response.body(), String);
+                    Log.d("mat","je suis la 2");
+
+                    try {
+                        Log.d("mat","je suis la 3");
+
+                        materials = objectMapper.readValue(response.body().string(), new TypeReference<List<Material>>() {});
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     view.displayMaterialsAll(materials);
                 }
                 else{
@@ -76,10 +88,12 @@ public class PresenterMaterials {
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Log.d("error",t.getMessage());
                 view.displayFailureInMaterialsAll();
             }
         });
+        return materials;
     }
 
 }

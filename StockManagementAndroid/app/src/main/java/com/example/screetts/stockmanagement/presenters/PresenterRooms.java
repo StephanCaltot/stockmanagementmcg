@@ -1,6 +1,7 @@
 package com.example.screetts.stockmanagement.presenters;
 
 import android.util.Log;
+
 import com.example.screetts.stockmanagement.fragment.RoomsFragment;
 import com.example.screetts.stockmanagement.retrofit.IRoomService;
 import java.util.List;
@@ -60,6 +61,7 @@ public class PresenterRooms {
         call.enqueue(new Callback<List<Room>>() {
             @Override
             public void onResponse(Call<List<Room>> call, Response<List<Room>> response) {
+
                 if (response.body() != null){
                     rooms = response.body();
                     view.displayRoomsAll(response.body());
