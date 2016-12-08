@@ -8,6 +8,7 @@ import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.config.ClientConfig;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
+import fr.univtln.mcg.Person;
 import fr.univtln.mcg.Room;
 import fr.univtln.mcg.enums.ERoomTypes;
 import fr.univtln.mcg.enums.ETechnologicBrands;
@@ -37,6 +38,11 @@ public class clientrest {
         Material computer = Computer.builder().touch(true).brand(ETechnologicBrands.ASUS).room(room3).build();
         Material computer2 = Computer.builder().touch(false).brand(ETechnologicBrands.ASUS).room(room4).build();
 
+        Person guillon  = Person.builder("Guillon").build();
+        Person martinez = Person.builder("Martinez").build();
+        Person caltot   = Person.builder("Caltot").build();
+
+
         //computer.setMTouch(true);
         //computer.setMBrand(ETechnologicBrands.EPSON);
         //computer.setMRoom(room3);
@@ -45,6 +51,11 @@ public class clientrest {
         //computer2.setMTouch(true);
         //computer2.setMBrand(ETechnologicBrands.ASUS);
         //computer2.setMRoom(room2);
+
+        webResource.path("people").type(MediaType.APPLICATION_JSON).post(guillon);
+        webResource.path("people").type(MediaType.APPLICATION_JSON).post(martinez);
+        webResource.path("people").type(MediaType.APPLICATION_JSON).post(caltot);
+
 
         webResource.path("rooms").type(MediaType.APPLICATION_JSON).post(room);
         webResource.path("rooms").type(MediaType.APPLICATION_JSON).post(room2);

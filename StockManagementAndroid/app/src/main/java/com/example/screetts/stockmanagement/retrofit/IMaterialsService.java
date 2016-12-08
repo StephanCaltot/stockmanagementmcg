@@ -1,9 +1,6 @@
 package com.example.screetts.stockmanagement.retrofit;
 
-import java.util.List;
-
 import fr.univtln.mcg.material.Material;
-import okhttp3.Response;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.GET;
