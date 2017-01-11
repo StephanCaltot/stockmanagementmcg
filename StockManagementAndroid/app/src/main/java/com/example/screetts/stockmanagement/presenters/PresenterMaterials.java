@@ -24,7 +24,7 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 
 public class PresenterMaterials {
 
-    public static final String BASE_URL = "http://10.21.143.57:8080";
+    public static final String BASE_URL = "http://10.190.98.220:8080";
     private MaterialsFragment view;
     private List<Material> materials;
     private ObjectMapper objectMapper = new ObjectMapper();
@@ -60,21 +60,16 @@ public class PresenterMaterials {
     }
 
 
-
     public List<Material> getMaterialsAll(){
 
         Call<ResponseBody> call = materialsService.getAll();
-        Log.d("mat","je suis la nigaaaaaaaaaaaaaa");
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                Log.d("mat","je suis la niga");
 
                 if (response.body() != null){
-                    Log.d("mat","je suis la 2");
 
                     try {
-                        Log.d("mat","je suis la 3");
 
                         materials = objectMapper.readValue(response.body().string(), new TypeReference<List<Material>>() {});
                     } catch (IOException e) {

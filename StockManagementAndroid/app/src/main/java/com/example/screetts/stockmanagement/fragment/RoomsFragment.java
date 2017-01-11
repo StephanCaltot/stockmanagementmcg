@@ -66,7 +66,7 @@ public class RoomsFragment extends Fragment {
             @Override
             public void onLongClick(View view, int position) {
                 Room room = roomsList.get(position);
-                Toast.makeText(thiscontext,"Il y a " + room.getMateriels().size() + " liés à cette salle.", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(thiscontext,"Il y a " + room.getMateriels().size() + " liés à cette salle.", Toast.LENGTH_SHORT).show();
             }
         }));
 
