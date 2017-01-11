@@ -41,7 +41,7 @@
   <groupId>fr.univtln.mcg</groupId>
   <artifactId>stockmanagement</artifactId>
 
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0-fix_jsf-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>stockmanagement</name>
