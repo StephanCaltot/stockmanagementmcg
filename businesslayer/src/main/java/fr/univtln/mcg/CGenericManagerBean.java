@@ -14,7 +14,7 @@ import java.util.List;
 public class CGenericManagerBean<T> implements IGenericManager<T> {
 
     @Inject
-    private CGenericDao<T> mDao;
+    private GenericDao<T> mDao;
 
     @Override
     public T create(T pT) {

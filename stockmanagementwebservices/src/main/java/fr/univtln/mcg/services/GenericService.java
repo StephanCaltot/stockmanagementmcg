@@ -1,10 +1,14 @@
-package fr.univtln.mcg;
+package fr.univtln.mcg.services;
 
 
+import fr.univtln.mcg.business.GenericManagerBean;
+import fr.univtln.mcg.business.IGenericManager;
 import fr.univtln.mcg.dao.CrudService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import javax.ejb.EJB;
+import javax.ejb.Local;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -21,11 +25,14 @@ import java.util.List;
  * Created by screetts on 16/11/16.
  */
 @Stateless
-public abstract class GenericServices<T> {
+@Local
+public abstract class GenericService<T> {
+    /*@Inject
+    CrudService<T> crudService;*/
     @Inject
-    CrudService<T> crudService;
+    IGenericManager<T> genericManager;
 
-    private Class getType(){
+    public Class getType(){
         Class<T> type = null;
         ParameterizedType thisClass = (ParameterizedType) this.getClass().getGenericSuperclass();
         Type dollarsT = thisClass.getActualTypeArguments()[0];
@@ -41,14 +48,14 @@ public abstract class GenericServices<T> {
     @GET
     @Path("{id}")
     public Response find(@PathParam("id") int id) {
-        T t = crudService.find(getType(),id);
+        T t = /*crudService.find(getType(),id);*/genericManager.find(id);
         return Response.ok(t).entity(t).build();
     }
 
 
     @GET
     public Response findAll() throws IOException {
-        List<T> t = crudService.findWithNamedQuery(getType().getSimpleName() + ".findAll");
+        List<T> t = genericManager.findAll();
         return Response.ok().entity(t).build();
     }
 
@@ -56,16 +63,16 @@ public abstract class GenericServices<T> {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response create(T t) {
-        t = crudService.create(t);
+        t = /*crudService.create(t);*/genericManager.create(t);
+        System.out.println("object cree : " + t.getClass().getSimpleName());
         return Response.ok(t).entity(t).build();
     }
-
 
 
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public Response update(T t) {
-        t = crudService.update(t);
+        t = /*crudService.update(t);*/ genericManager.update(t);
         return Response.ok(t).entity(t).build();
     }
 
@@ -73,7 +80,8 @@ public abstract class GenericServices<T> {
     @DELETE
     @Path("{id}")
     public Response delete(@PathParam("id") int id){
-        crudService.delete(getType(),id);
+        //crudService.delete(getType(),id);
+        genericManager.delete(id);
         return Response.ok().build();
     }
 

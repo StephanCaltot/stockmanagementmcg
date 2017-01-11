@@ -24,12 +24,14 @@ import javax.validation.constraints.NotNull;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@NamedQuery(name = "Technologic.findAll", query = "select objet from Technologic objet")
+@NamedQuery(name = Technologic.GET_ALL, query = "select objet from Technologic objet")
 @DiscriminatorValue(value = "technologic")
 @JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property = "@id" ,scope = Technologic.class)
 @JsonTypeInfo(use= JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY,property="@class")
 
 public abstract class Technologic extends Material {
+
+    public static final String GET_ALL = "Technologic.findAll";
 
     @NotNull
     private ETechnologicBrands brand;

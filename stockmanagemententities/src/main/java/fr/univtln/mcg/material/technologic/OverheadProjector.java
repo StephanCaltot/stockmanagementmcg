@@ -22,8 +22,10 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(builderMethodName = "hdBuilder")
-@NamedQuery(name="OverheadProjector.findAll", query="SELECT o FROM OverheadProjector o")
+@NamedQuery(name=OverheadProjector.GET_ALL, query="SELECT o FROM OverheadProjector o")
 public class OverheadProjector extends Technologic {
+
+    public static final String GET_ALL = "OverheadProjector.findAll";
 
     @NotNull
     private boolean hd;

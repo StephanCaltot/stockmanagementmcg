@@ -23,8 +23,10 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(builderMethodName = "typeBuilder")
-@NamedQuery(name="ArmChair.findAll", query="SELECT a FROM ArmChair a")
+@NamedQuery(name=ArmChair.GET_ALL, query="SELECT a FROM ArmChair a")
 public class ArmChair extends Educational {
+
+    public static final String GET_ALL = "ArmChair.findAll";
 
     @NotNull
     private EArmChairTypes type;
