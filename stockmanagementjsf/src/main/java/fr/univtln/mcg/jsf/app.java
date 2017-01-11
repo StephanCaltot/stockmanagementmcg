@@ -2,8 +2,14 @@ package fr.univtln.mcg.jsf;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationConfig;
+import com.google.gson.Gson;
 import fr.univtln.mcg.Room;
+import fr.univtln.mcg.enums.EChalkColors;
+import fr.univtln.mcg.enums.ERoomTypes;
+import fr.univtln.mcg.enums.ETechnologicBrands;
 import fr.univtln.mcg.material.Material;
+import fr.univtln.mcg.material.pedagogic.Chalk;
 import fr.univtln.mcg.material.technologic.Computer;
 import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
@@ -12,7 +18,10 @@ import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+
+import static com.fasterxml.jackson.databind.DeserializationFeature.UNWRAP_ROOT_VALUE;
 
 /**
  * Created by jlng on 30/11/16.
@@ -20,7 +29,7 @@ import java.util.List;
 public class app {
     public static void main(String[] args) {
         ResteasyClient client = new ResteasyClientBuilder().build();
-        ResteasyWebTarget target = client.target("http://localhost:8080/stockmanagementwebservices/webresources/computers");
+        ResteasyWebTarget target = client.target("http://localhost:8080/stockmanagementwebservices/webresources/materials/all");
         Response response = target.request().get();
         String value = response.readEntity(String.class);
         System.out.println(value);
@@ -46,5 +55,6 @@ public class app {
         }
         response.close();
         //System.out.println(((Computer)list.get(1).getMMateriels().get(0)).getMBrand());
+
     }
 }
