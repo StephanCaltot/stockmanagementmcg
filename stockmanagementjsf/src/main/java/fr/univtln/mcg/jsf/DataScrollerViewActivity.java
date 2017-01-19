@@ -1,5 +1,6 @@
 package fr.univtln.mcg.jsf;
 
+import fr.univtln.mcg.Activity;
 import fr.univtln.mcg.material.Material;
 
 import javax.annotation.PostConstruct;
@@ -15,23 +16,23 @@ import java.util.List;
 
 @ManagedBean
 @ViewScoped
-public class DataScrollerViewMaterial implements Serializable {
+public class DataScrollerViewActivity implements Serializable {
 
-    private List<Material> materials;
+    private List<Activity> activities;
 
-    @ManagedProperty("#{materialService}")
-    private MaterialService service;
+    @ManagedProperty("#{activityService}")
+    private ActivityService service;
 
     @PostConstruct
     public void init() {
-        materials = service.create();
+        activities = service.create();
     }
 
-    public List<Material> getMaterials() {
-        return materials;
+    public List<Activity> getActivities() {
+        return activities;
     }
 
-    public void setService(MaterialService service) {
+    public void setService(ActivityService service) {
         this.service = service;
     }
 }

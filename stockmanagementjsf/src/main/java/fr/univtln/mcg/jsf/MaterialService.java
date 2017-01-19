@@ -4,9 +4,13 @@ package fr.univtln.mcg.jsf;
  * Created by jlng on 29/11/16.
  */
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.WebResource;
+import com.sun.jersey.api.client.config.ClientConfig;
+import com.sun.jersey.api.client.config.DefaultClientConfig;
 import fr.univtln.mcg.Room;
 import fr.univtln.mcg.material.Material;
 import org.jboss.resteasy.client.jaxrs.ResteasyClient;
@@ -15,24 +19,30 @@ import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
 
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.ws.rs.client.Entity;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.io.Serializable;
 import java.util.List;
+
 
 @ManagedBean(name = "materialService")
 @ApplicationScoped
-public class MaterialService {
+public class MaterialService implements Serializable {
 
-    public List<Material> createMaterials()  {
+    private List<Material> list;
+
+    public List<Material> create() {
         ResteasyClient client = new ResteasyClientBuilder().build();
-        ResteasyWebTarget target = client.target("http://localhost:8080/stockmanagementwebservices/webresources/materials/all");
+        ResteasyWebTarget target = client.target("http://localhost:8080/stockmanagementwebservices/webresources/materials/nongen");
         Response response = target.request().get();
         String value = response.readEntity(String.class);
+        // JACKSON
         ObjectMapper mapper = new ObjectMapper();
-        List<Material> list = new ArrayList<>();
+        list = null;
         try {
-            list = mapper.readValue(value, mapper.getTypeFactory().constructCollectionType(List.class, Material.class));
+            list = mapper.readValue(value, new TypeReference<List<Material>>(){});
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -40,4 +50,17 @@ public class MaterialService {
         return list;
     }
 
+    public void update(Material material, Room room) {
+        material.setRoom(room);
+        ClientConfig cc = new DefaultClientConfig();
+        cc.getClasses().add(JacksonJsonProvider.class);
+        Client c = Client.create(cc);
+        WebResource webResource = c.resource("http://localhost:8080/stockmanagementwebservices/webresources/");
+
+        webResource.path("materials").type(MediaType.APPLICATION_JSON).put(material);
+    }
+
+    public List<Material> getList() {
+        return list;
+    }
 }

@@ -29,10 +29,10 @@ public class RestClient {
         Client c = Client.create();
         WebResource webResource = c.resource("http://62.210.72.150:8081");
 
-        Room room  = new Room(1,"U026", ERoomTypes.TP,new ArrayList<Material>());
-        Room room2 = new Room(2,"T003", ERoomTypes.TD,new ArrayList<Material>());
-        Room room3 = new Room(3,"Y001", ERoomTypes.AMPHI,new ArrayList<Material>());
-        Room room4 = new Room(4,"W107", ERoomTypes.TD,new ArrayList<Material>());
+        Room room  = new Room(1,"U026", ERoomTypes.TP);
+        Room room2 = new Room(2,"T003", ERoomTypes.TD);
+        Room room3 = new Room(3,"Y001", ERoomTypes.AMPHI);
+        Room room4 = new Room(4,"W107", ERoomTypes.TD);
 
         Computer computer = Computer.builder().touch(true).brand(ETechnologicBrands.ASUS).room(room3).build();
         Computer computer2 = Computer.builder().touch(false).brand(ETechnologicBrands.ASUS).room(room4).build();
