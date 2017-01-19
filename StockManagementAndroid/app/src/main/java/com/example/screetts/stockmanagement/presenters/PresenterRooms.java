@@ -18,7 +18,7 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 
 public class PresenterRooms {
 
-    public static final String BASE_URL = "http://10.190.98.220:8080";
+    public static final String BASE_URL = "http://192.168.43.73:8080";
     private RoomsFragment view;
     Retrofit retrofit;
     IRoomService roomService;

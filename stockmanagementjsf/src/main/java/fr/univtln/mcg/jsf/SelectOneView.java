@@ -26,8 +26,8 @@ public class SelectOneView {
 
     @PostConstruct
     public void init() {
-        rooms = serviceRoom.createRooms();
-        materials = serviceMaterials.createMaterials();
+        rooms = serviceRoom.create();
+        materials = serviceMaterials.create();
 
     }
 

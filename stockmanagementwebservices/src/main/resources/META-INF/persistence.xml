@@ -11,7 +11,6 @@
         <class>fr.univtln.mcg.Person</class>
         <class>fr.univtln.mcg.Room</class>
         <class>fr.univtln.mcg.Activity</class>
-        <class>fr.univtln.mcg.ActivityLog</class>
         <class>fr.univtln.mcg.material.Material</class>
         <class>fr.univtln.mcg.material.pedagogic.ArmChair</class>
         <class>fr.univtln.mcg.material.pedagogic.Board</class>

@@ -1,0 +1,46 @@
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://java.sun.com/jsf/core"
+                template="/templates/mainTemplate.xhtml"
+>
+
+    <ui:define name="bodyContent">
+
+
+
+
+<h:form>
+    <p:dataScroller value="#{dataScrollerViewActivity.activities}" var="activity" chunkSize="10">
+        <f:facet name="header">
+            Scroll Down to Load More Activities
+        </f:facet>
+
+        <h:panelGrid columns="2" style="width:100%" columnClasses="logo,detail" >
+
+            <p:outputPanel >
+                <p:separator />
+
+                <h:panelGrid columns="2" cellpadding="5">
+                    <h:outputText value="Id:" />
+                    <h:outputText value="#{activity.id}" style="font-weight: bold"/>
+
+                    <h:outputText value="Date:" />
+                    <h:outputText value="#{activity.date}" style="font-weight: bold"/>
+
+                    <h:outputText value="Material:" />
+                    <h:outputText value="#{activity.material}" style="font-weight: bold"/>
+
+                    <h:outputText value="Room:" />
+                    <h:outputText value="#{activity.room}" style="font-weight: bold"/>
+
+                </h:panelGrid>
+            </p:outputPanel>
+        </h:panelGrid>
+    </p:dataScroller>
+</h:form>
+        </ui:define>
+
+        </ui:composition>

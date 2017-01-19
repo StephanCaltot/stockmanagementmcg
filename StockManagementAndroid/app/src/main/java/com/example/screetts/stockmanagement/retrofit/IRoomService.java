@@ -13,9 +13,9 @@ import retrofit2.http.Path;
 
 public interface IRoomService {
 
-    @GET("/stockmanagementwebservices/webresources/rooms/{id_room}")
+    @GET("/stockmanagementwebservices/webresources/rooms/nongen/{id_room}")
     Call<Room> get(@Path("id_room") int id);
 
-    @GET("/stockmanagementwebservices/webresources/rooms")
+    @GET("/stockmanagementwebservices/webresources/rooms/nongen")
     Call<List<Room>> getAll();
 }

@@ -48,13 +48,13 @@ public class Room {
 
     @NotNull
     private ERoomTypes type;
-
+/*
     @OneToMany(mappedBy="room", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @NotNull
     @Valid
     @Size(max=50)
     private List<Material> materiels;
-
+*/
     public static RoomBuilder builder(String name, ERoomTypes type) {
         return nameBuilder().name(name).type(type);
     }

@@ -11,6 +11,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by screetts on 28/11/16.
@@ -35,11 +36,6 @@ public class Activity implements Serializable{
     private int id;
 
     @ManyToOne (cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
-    @JoinColumn(name="PERSON_ID")
-    @NotNull
-    private Person person;
-
-    @ManyToOne (cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinColumn(name="MATERIAL_ID")
     @NotNull
     private Material material;
@@ -49,12 +45,10 @@ public class Activity implements Serializable{
     @NotNull
     private Room room;
 
-//    @Pattern(regexp="\\(\\d{3}\\)\\d{3}-\\d{4}")
-    private SimpleDateFormat sdf = new SimpleDateFormat("dd/M/yyyy");
+    private String date;
 
-
-    public static  ActivityBuilder builder(Person person, Material material, Room room, SimpleDateFormat sdf) {
-        return allBuilder().person(person).material(material).room(room).sdf(sdf);
+    public static  ActivityBuilder builder(Material material, Room room, String date) {
+        return allBuilder().material(material).room(room).date(date);
     }
 
 }

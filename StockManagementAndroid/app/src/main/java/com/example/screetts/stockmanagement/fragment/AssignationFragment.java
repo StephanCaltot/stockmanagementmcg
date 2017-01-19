@@ -5,6 +5,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
@@ -16,6 +17,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.screetts.stockmanagement.adapters.MaterialsAdapter;
+import com.example.screetts.stockmanagement.presenters.PresenterAssignation;
+import com.example.screetts.stockmanagement.presenters.PresenterMaterials;
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
@@ -23,7 +27,9 @@ import com.google.android.gms.vision.barcode.BarcodeDetector;
 
 import java.io.IOException;
 
+import fr.univtln.mcg.Room;
 import fr.univtln.mcg.androidclient.R;
+import fr.univtln.mcg.material.Material;
 
 
 public class AssignationFragment extends Fragment {
@@ -38,8 +44,12 @@ public class AssignationFragment extends Fragment {
     private Button assign;
 
     private Context thiscontext;
-    private int firstStep = 0;
+    private String value = "";
     private int nb = 0;
+    private PresenterAssignation presenterAssignation;
+    private Room actualRoom;
+    private Room newRoom;
+    private Material material;
 
 
     public AssignationFragment() {}
@@ -50,9 +60,16 @@ public class AssignationFragment extends Fragment {
     }
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        presenterAssignation = new PresenterAssignation(this);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         thiscontext = container.getContext();
+
         View view = inflater.inflate(R.layout.assign, container, false);
 
             cameraView = (SurfaceView) view.findViewById(R.id.camera_view);
@@ -64,6 +81,7 @@ public class AssignationFragment extends Fragment {
             assign.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    presenterAssignation.getInfoFromQrCode(value, nb);
                     nb = nb + 1;
                     if (nb > 2)
                         nb = 0;
@@ -123,8 +141,8 @@ public class AssignationFragment extends Fragment {
                         if (nb == 0) {
                             barcodeInfo.post(new Runnable() {    // Use the post method of the TextView
                                 public void run() {
-                                    barcodeInfo.setText(barcodes.valueAt(0).displayValue);
-                                    firstStep = 1;
+                                    value = barcodes.valueAt(0).displayValue;
+                                    barcodeInfo.setText(value);
                                 }
                             });
                         }
@@ -132,8 +150,8 @@ public class AssignationFragment extends Fragment {
                         {
                             barcodeInfoMat.post(new Runnable() {    // Use the post method of the TextView
                                 public void run() {
-                                    barcodeInfoMat.setText(barcodes.valueAt(0).displayValue);
-                                    firstStep = 2;
+                                    value = barcodes.valueAt(0).displayValue;
+                                    barcodeInfoMat.setText(value);
                                 }
                             });
                         }
@@ -141,12 +159,12 @@ public class AssignationFragment extends Fragment {
                         {
                             barcodeInfoNewRoom.post(new Runnable() {    // Use the post method of the TextView
                                 public void run() {
-                                    barcodeInfoNewRoom.setText(barcodes.valueAt(0).displayValue);
-                                    firstStep = 2;
-                                    Toast toast = Toast.makeText(thiscontext, "Hello", Toast.LENGTH_LONG);
-                                    toast.show();
+                                    value = barcodes.valueAt(0).displayValue;
+                                    barcodeInfoNewRoom.setText(value);
                                 }
                             });
+                            Toast toast = Toast.makeText(thiscontext, "Hello", Toast.LENGTH_LONG);
+                            toast.show();
                         }
                     }
                 }
@@ -164,4 +182,37 @@ public class AssignationFragment extends Fragment {
         super.onDetach();
     }
 
+    public void setMaterial(Material material) {
+        this.material = material;
+        String lMessage = "materials id_room : " + material.getId() + "\nmaterials room" + material.getRoom().getId();
+        Toast.makeText(getActivity(), lMessage, Toast.LENGTH_LONG).show();
+    }
+
+    public void setErrorMaterial(Material material)
+    {
+        String lMessage = "Material " + material.getId() + " is in wrong room "+ material.getRoom().getName()
+                + ". An activity log will be create.";
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+        builder.setMessage(lMessage).setTitle("Erreur");
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    public void setNewRoom(Room newRoom) {
+        this.newRoom = newRoom;
+        String lMessage = "room id_room : " + newRoom.getId() + "\nroom name" + newRoom.getName();
+        Toast.makeText(getActivity(), lMessage, Toast.LENGTH_LONG).show();
+    }
+
+    public void setActualRoom(Room actualRoom) {
+        this.actualRoom = actualRoom;
+        String lMessage = "room id_room : " + actualRoom.getId() + "\nroom name" + actualRoom.getName();
+        Toast.makeText(getActivity(), lMessage, Toast.LENGTH_LONG).show();
+    }
+
+    public Room getActualRoom() {
+        return actualRoom;
+    }
 }

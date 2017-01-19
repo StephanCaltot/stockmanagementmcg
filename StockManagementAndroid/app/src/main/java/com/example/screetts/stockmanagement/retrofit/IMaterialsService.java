@@ -12,9 +12,9 @@ import retrofit2.http.Path;
 
 public interface IMaterialsService {
 
-    @GET("/stockmanagementwebservices/webresources/materials/{id_material}")
+    @GET("/stockmanagementwebservices/webresources/materials/nongen/{id_material}")
     Call<Material> get(@Path("id_material") int id);
 
-    @GET("/stockmanagementwebservices/webresources/materials/all")
+    @GET("/stockmanagementwebservices/webresources/materials/nongen")
     Call<ResponseBody> getAll();
 }
