@@ -1,4 +1,3 @@
-/home/screetts/master2/bruno/stockmanagementmcg/dao/src/main/java/fr/univtln/mcg/QueryParameter.java
-/home/screetts/master2/bruno/stockmanagementmcg/dao/src/main/java/fr/univtln/mcg/CGenericDao.java
-/home/screetts/master2/bruno/stockmanagementmcg/dao/src/main/java/fr/univtln/mcg/IGenericDao.java
-/home/screetts/master2/bruno/stockmanagementmcg/dao/src/main/java/fr/univtln/mcg/App.java
+/home/jlng/TEST/stockmanagementmcg/dao/src/main/java/fr/univtln/mcg/QueryParameter.java
+/home/jlng/TEST/stockmanagementmcg/dao/src/main/java/fr/univtln/mcg/CrudServiceBean.java
+/home/jlng/TEST/stockmanagementmcg/dao/src/main/java/fr/univtln/mcg/CrudService.java

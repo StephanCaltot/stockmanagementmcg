@@ -2,8 +2,9 @@ package com.example.screetts.stockmanagement.retrofit;
 
 import java.util.List;
 
-import fr.univtln.mcg.ActivityLog;
+import fr.univtln.mcg.Activity;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
@@ -14,12 +15,12 @@ import retrofit2.http.Path;
 
 public interface IAssignationService {
 
-    @GET("/stockmanagementwebservices/webresources/activitylogs/nongen/{id_activity_log}")
-    Call<ActivityLog> get(@Path("id_activity_log") int id);
+    @GET("/stockmanagementwebservices/webresources/activities/nongen/{id_activity}")
+    Call<Activity> get(@Path("id_activity") int id);
 
-    @GET("/stockmanagementwebservices/webresources/activitylogs/nongen")
-    Call<List<ActivityLog>> getAll();
+    @GET("/stockmanagementwebservices/webresources/activities/nongen")
+    Call<List<Activity>> getAll();
 
-    @POST("/stockmanagementwebservices/webresources/activitylogs/")
-    Call<List<ActivityLog>> create();
+    @POST("/stockmanagementwebservices/webresources/activities/")
+    Call<Activity> create(@Body Activity activity);
 }

@@ -3,7 +3,9 @@ package com.example.screetts.stockmanagement.retrofit;
 import fr.univtln.mcg.material.Material;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 /**
@@ -17,4 +19,7 @@ public interface IMaterialsService {
 
     @GET("/stockmanagementwebservices/webresources/materials/nongen")
     Call<ResponseBody> getAll();
+
+    @PUT("/stockmanagementwebservices/webresources/materials/")
+    Call<Material> update(@Body Material material);
 }

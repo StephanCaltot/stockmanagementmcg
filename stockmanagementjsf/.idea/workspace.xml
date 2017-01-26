@@ -2,6 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0e130b5-f59c-4701-8202-b7fee4bfcb93" name="Default" comment="">
+<<<<<<< HEAD
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../dao/src/main/java/fr/univtln/mcg/CrudService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../dao/src/main/java/fr/univtln/mcg/CrudServiceBean.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../businesslayer/src/main/java/fr/univtln/mcg/CActivityLogManagerBean.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../dao/src/main/java/fr/univtln/mcg/App.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../dao/src/main/java/fr/univtln/mcg/CGenericDao.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../dao/src/main/java/fr/univtln/mcg/IGenericDao.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../dao/target/classes/fr/univtln/mcg/App.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../dao/target/classes/fr/univtln/mcg/CGenericDao.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../dao/target/classes/fr/univtln/mcg/IGenericDao.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dao/target/classes/fr/univtln/mcg/QueryParameter.class" afterPath="$PROJECT_DIR$/../dao/target/classes/fr/univtln/mcg/QueryParameter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StockManagementAndroid/app/src/main/java/com/example/screetts/stockmanagement/fragment/AssignationFragment.java" afterPath="$PROJECT_DIR$/../StockManagementAndroid/app/src/main/java/com/example/screetts/stockmanagement/fragment/AssignationFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StockManagementAndroid/app/src/main/java/com/example/screetts/stockmanagement/presenters/PresenterAssignation.java" afterPath="$PROJECT_DIR$/../StockManagementAndroid/app/src/main/java/com/example/screetts/stockmanagement/presenters/PresenterAssignation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StockManagementAndroid/app/src/main/java/com/example/screetts/stockmanagement/retrofit/IAssignationService.java" afterPath="$PROJECT_DIR$/../StockManagementAndroid/app/src/main/java/com/example/screetts/stockmanagement/retrofit/IAssignationService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StockManagementAndroid/app/src/main/java/com/example/screetts/stockmanagement/retrofit/IMaterialsService.java" afterPath="$PROJECT_DIR$/../StockManagementAndroid/app/src/main/java/com/example/screetts/stockmanagement/retrofit/IMaterialsService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../businesslayer/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../businesslayer/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../businesslayer/businesslayer.iml" afterPath="$PROJECT_DIR$/../businesslayer/businesslayer.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../businesslayer/pom.xml" afterPath="$PROJECT_DIR$/../businesslayer/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../businesslayer/src/main/java/fr/univtln/mcg/CActivityManagerBean.java" afterPath="$PROJECT_DIR$/../businesslayer/src/main/java/fr/univtln/mcg/CActivityManagerBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../businesslayer/src/main/java/fr/univtln/mcg/CPersonManagerBean.java" afterPath="$PROJECT_DIR$/../businesslayer/src/main/java/fr/univtln/mcg/CPersonManagerBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../businesslayer/src/main/java/fr/univtln/mcg/CRoomManagerBean.java" afterPath="$PROJECT_DIR$/../businesslayer/src/main/java/fr/univtln/mcg/CRoomManagerBean.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dao/.idea/compiler.xml" afterPath="$PROJECT_DIR$/../dao/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dao/.idea/misc.xml" afterPath="$PROJECT_DIR$/../dao/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dao/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../dao/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dao/dao.iml" afterPath="$PROJECT_DIR$/../dao/dao.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dao/pom.xml" afterPath="$PROJECT_DIR$/../dao/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dao/src/main/java/fr/univtln/mcg/QueryParameter.java" afterPath="$PROJECT_DIR$/../dao/src/main/java/fr/univtln/mcg/QueryParameter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dao/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/../dao/target/maven-archiver/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dao/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/../dao/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dao/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/../dao/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dao/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="$PROJECT_DIR$/../dao/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dao/target/surefire-reports/TEST-fr.univtln.mcg.AppTest.xml" afterPath="$PROJECT_DIR$/../dao/target/surefire-reports/TEST-fr.univtln.mcg.AppTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../dao/target/surefire-reports/fr.univtln.mcg.AppTest.txt" afterPath="$PROJECT_DIR$/../dao/target/surefire-reports/fr.univtln.mcg.AppTest.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../stockmanagementwebservices/pom.xml" afterPath="$PROJECT_DIR$/../stockmanagementwebservices/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../stockmanagementwebservices/src/main/java/fr/univtln/mcg/dao/CrudService.java" afterPath="$PROJECT_DIR$/../stockmanagementwebservices/src/main/java/fr/univtln/mcg/dao/CrudService.java" />
+=======
       <change type="DELETED" beforePath="$PROJECT_DIR$/../stockmanagemententities/src/main/java/fr/univtln/mcg/RestClient.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/fr/univtln/mcg/jsf/app.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../stockmanagemententities/pom.xml" afterPath="$PROJECT_DIR$/../stockmanagemententities/pom.xml" />
@@ -54,6 +90,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../stockmanagementwebservices/src/main/java/fr/univtln/mcg/services/OverheadProjectorService.java" afterPath="$PROJECT_DIR$/../stockmanagementwebservices/src/main/java/fr/univtln/mcg/services/OverheadProjectorService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../stockmanagementwebservices/src/main/java/fr/univtln/mcg/services/RoomService.java" afterPath="$PROJECT_DIR$/../stockmanagementwebservices/src/main/java/fr/univtln/mcg/services/RoomService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../stockmanagementwebservices/src/main/java/fr/univtln/mcg/services/WorkPhoneService.java" afterPath="$PROJECT_DIR$/../stockmanagementwebservices/src/main/java/fr/univtln/mcg/services/WorkPhoneService.java" />
+>>>>>>> development
     </list>
     <ignored path="stockmanagementmcg.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,9 +123,17 @@
       <file leaf-file-name="DataScrollerViewRoom.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/fr/univtln/mcg/jsf/DataScrollerViewRoom.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="162">
+              <caret line="29" column="6" lean-forward="false" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+=======
             <state relative-caret-position="240">
               <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
               <folding />
+>>>>>>> development
             </state>
           </provider>
         </entry>
@@ -96,8 +141,13 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="270">
+              <caret line="27" column="124" lean-forward="false" selection-start-line="27" selection-start-column="124" selection-end-line="27" selection-end-column="124" />
+=======
             <state relative-caret-position="2130">
               <caret line="142" column="24" lean-forward="false" selection-start-line="142" selection-start-column="24" selection-end-line="142" selection-end-column="24" />
+>>>>>>> development
               <folding />
             </state>
           </provider>
@@ -106,11 +156,17 @@
       <file leaf-file-name="clientrest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/fr/univtln/mcg/jsf/clientrest.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="702">
+              <caret line="39" column="41" lean-forward="false" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
+              <folding />
+=======
             <state relative-caret-position="105">
               <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+>>>>>>> development
             </state>
           </provider>
         </entry>
@@ -118,8 +174,13 @@
       <file leaf-file-name="DataScrollerViewActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/fr/univtln/mcg/jsf/DataScrollerViewActivity.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="324">
+              <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+=======
             <state relative-caret-position="165">
               <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+>>>>>>> development
               <folding />
             </state>
           </provider>
@@ -128,8 +189,13 @@
       <file leaf-file-name="ActivityService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/fr/univtln/mcg/jsf/ActivityService.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="450">
+              <caret line="45" column="36" lean-forward="false" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
+=======
             <state relative-caret-position="225">
               <caret line="28" column="32" lean-forward="false" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+>>>>>>> development
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -140,8 +206,13 @@
       <file leaf-file-name="activityLog.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/activityLog.xhtml">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="324">
+              <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+=======
             <state relative-caret-position="300">
               <caret line="20" column="49" lean-forward="false" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+>>>>>>> development
               <folding />
             </state>
           </provider>
@@ -160,9 +231,17 @@
       <file leaf-file-name="assign2.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/assign2.xhtml">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="216">
+              <caret line="20" column="37" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+=======
             <state relative-caret-position="269">
               <caret line="24" column="55" lean-forward="false" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
               <folding />
+>>>>>>> development
             </state>
           </provider>
         </entry>
@@ -170,6 +249,13 @@
       <file leaf-file-name="assign.xhtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/assign.xhtml">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="358">
+              <caret line="30" column="18" lean-forward="false" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+=======
             <state relative-caret-position="345">
               <caret line="35" column="27" lean-forward="false" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
               <folding />
@@ -183,6 +269,7 @@
             <state relative-caret-position="90">
               <caret line="13" column="3" lean-forward="false" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
               <folding />
+>>>>>>> development
             </state>
           </provider>
         </entry>
@@ -300,8 +387,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
       <pane id="PackagesPane" />
       <pane id="Scratches" />
+>>>>>>> development
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -374,11 +464,31 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stockmanagementmcg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stockmanagementmcg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+=======
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../stockmanagemententities" />
+>>>>>>> development
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
@@ -897,6 +1007,9 @@
       <workItem from="1480440782725" duration="1701000" />
       <workItem from="1480442700553" duration="614000" />
       <workItem from="1484835584403" duration="10782000" />
+<<<<<<< HEAD
+      <workItem from="1485467011246" duration="1621000" />
+=======
       <workItem from="1484920263542" duration="69000" />
       <workItem from="1484920545628" duration="352000" />
       <workItem from="1484920925826" duration="415000" />
@@ -911,11 +1024,16 @@
       <workItem from="1485449502988" duration="1925000" />
       <workItem from="1485456042631" duration="2915000" />
       <workItem from="1485464665434" duration="2412000" />
+>>>>>>> development
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="16872000" />
+=======
     <option name="totallyTimeSpent" value="27361000" />
+>>>>>>> development
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
@@ -943,9 +1061,15 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38390094" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22390439" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
+=======
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18266253" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28636363" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
+>>>>>>> development
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="SonarLint" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3101852" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1020,6 +1144,23 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/changeMessage.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/materials.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> development
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -1101,15 +1242,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/templates/mainTemplate.xhtml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
         <state relative-caret-position="585">
           <caret line="39" column="41" lean-forward="false" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
+>>>>>>> development
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
         <state relative-caret-position="150">
           <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+>>>>>>> development
         </state>
       </provider>
     </entry>
@@ -1145,11 +1296,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fr/univtln/mcg/jsf/RoomService.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="270">
+          <caret line="27" column="124" lean-forward="false" selection-start-line="27" selection-start-column="124" selection-end-line="27" selection-end-column="124" />
+          <folding />
+=======
         <state relative-caret-position="150">
           <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+>>>>>>> development
         </state>
       </provider>
     </entry>
@@ -1173,29 +1330,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fr/univtln/mcg/jsf/MaterialService.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="180">
+          <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+=======
         <state relative-caret-position="465">
           <caret line="31" column="13" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
           <folding>
             <element signature="e#2344#2345#0" expanded="false" />
             <element signature="e#2371#2372#0" expanded="false" />
           </folding>
+>>>>>>> development
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fr/univtln/mcg/jsf/MaterialConverter.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="702">
+          <caret line="39" column="41" lean-forward="false" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
+          <folding />
+=======
         <state relative-caret-position="405">
           <caret line="34" column="13" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+>>>>>>> development
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fr/univtln/mcg/jsf/HelloBean.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="162">
+          <caret line="29" column="6" lean-forward="false" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+=======
         <state relative-caret-position="315">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+>>>>>>> development
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1228,16 +1401,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="-2484">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
         <state relative-caret-position="2130">
           <caret line="142" column="24" lean-forward="false" selection-start-line="142" selection-start-column="24" selection-end-line="142" selection-end-column="24" />
           <folding />
+>>>>>>> development
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fr/univtln/mcg/jsf/ActivityService.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="450">
+          <caret line="45" column="36" lean-forward="false" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
+=======
         <state relative-caret-position="225">
           <caret line="28" column="32" lean-forward="false" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+>>>>>>> development
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1246,8 +1429,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/changeMessage.xhtml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="324">
+          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+=======
         <state relative-caret-position="345">
           <caret line="23" column="49" lean-forward="false" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+>>>>>>> development
           <folding />
         </state>
       </provider>
@@ -1262,24 +1450,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/assign2.xhtml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="324">
+          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+=======
         <state relative-caret-position="269">
           <caret line="24" column="55" lean-forward="false" selection-start-line="24" selection-start-column="55" selection-end-line="24" selection-end-column="55" />
+>>>>>>> development
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/assign.xhtml">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="216">
+          <caret line="20" column="37" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+=======
         <state relative-caret-position="345">
           <caret line="35" column="27" lean-forward="false" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
           <folding />
+>>>>>>> development
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fr/univtln/mcg/jsf/clientrest.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="358">
+          <caret line="30" column="18" lean-forward="false" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+=======
         <state relative-caret-position="105">
           <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+>>>>>>> development
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
