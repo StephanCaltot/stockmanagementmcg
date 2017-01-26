@@ -21,6 +21,6 @@ public class MaterialManagerBean extends GenericManagerBean<Material> {
     }
 
     public List<Material> findAllMaterials(){
-        return (List<Material>) crudService.findWithNamedQuery(Material.GET_ALL);
+        return (List<Material>) crudService.findWithNamedQuery(Material.GET_ALL_MATERIALS);
     }
 }

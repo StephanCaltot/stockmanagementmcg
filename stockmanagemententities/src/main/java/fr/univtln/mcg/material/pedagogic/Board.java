@@ -20,15 +20,14 @@ import javax.validation.constraints.NotNull;
 @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = Board.class)
 @Entity
 @Table(schema = "stock")
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(builderMethodName = "typeBuilder")
-@NamedQuery(name=Board.GET_ALL, query="SELECT b FROM Board b")
+@NamedQuery(name=Board.GET_ALL_BOARD, query="SELECT b FROM Board b")
 public class Board extends Educational {
 
-    public static final String GET_ALL = "Board.findAll";
+    public static final String GET_ALL_BOARD = "Board.findAll";
 
     @Min(70)
     @Max(100)
@@ -38,4 +37,8 @@ public class Board extends Educational {
     @NotNull
     private EBoardTypes type;
 
+    @Override
+    public String toString() {
+        return "Tableau ( " + this.getId() + " ) de taille " + this.getSize();
+    }
 }

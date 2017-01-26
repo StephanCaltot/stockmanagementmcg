@@ -13,6 +13,7 @@ import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * Created by jlng on 19/01/17.
@@ -21,6 +22,8 @@ import java.util.List;
 @ApplicationScoped
 public class ActivityService implements Serializable {
 
+    private static Logger logger = Logger.getLogger(String.valueOf(ActivityService.class));
+
     private List<Activity> list;
 
     public List<Activity> create() {
@@ -28,13 +31,12 @@ public class ActivityService implements Serializable {
         ResteasyWebTarget target = client.target("http://localhost:8080/stockmanagementwebservices/webresources/activities/nongen");
         Response response = target.request().get();
         String value = response.readEntity(String.class);
-        // JACKSON
         ObjectMapper mapper = new ObjectMapper();
         list = null;
         try {
             list = mapper.readValue(value, new TypeReference<List<Activity>>(){});
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.info(String.valueOf(e));
         }
         response.close();
         return list;

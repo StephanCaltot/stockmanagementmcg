@@ -1,7 +1,6 @@
 package fr.univtln.mcg.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import fr.univtln.mcg.business.WorkPhoneManagerBean;
 import fr.univtln.mcg.material.technologic.WorkPhone;
 
@@ -37,9 +36,7 @@ public class WorkPhoneService extends GenericService<WorkPhone> {
     @GET
     @Path("nongen")
     public Response all() throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
         List<WorkPhone> workPhones = workPhoneManagerBean.findAllWorkPhones();
-        //String json = mapper.writerWithType(new TypeReference<List<Computer>>() {}).writeValueAsString(computers);
         return Response.ok().entity(workPhones).build();
     }
 }

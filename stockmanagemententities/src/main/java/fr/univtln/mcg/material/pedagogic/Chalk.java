@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import javax.persistence.Entity;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -19,21 +20,26 @@ import javax.validation.constraints.NotNull;
 @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = Chalk.class)
 @Entity
 @Table(schema = "stock")
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@NamedQuery(name=Chalk.GET_ALL, query="SELECT c FROM Chalk c")
+@NamedQuery(name=Chalk.GET_ALL_CHALK, query="SELECT c FROM Chalk c")
 public class Chalk extends Educational {
 
-    public static final String GET_ALL = "Chalk.findAll";
+    public static final String GET_ALL_CHALK = "Chalk.findAll";
 
     @NotNull
     private EChalkColors color;
+
 
     @Builder
     public Chalk (EChalkColors color, Room room) {
         super(room);
         this.color = color;
+    }
+
+    @Override
+    public String toString(){
+        return "Craie ( " + this.getId() + " ) " + this.getColor()  ;
     }
 }

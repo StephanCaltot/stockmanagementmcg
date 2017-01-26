@@ -21,6 +21,6 @@ public class ComputerManagerBean extends GenericManagerBean<Computer> {
     }
 
     public List<Computer> findAllComputers(){
-        return (List<Computer>) crudService.findWithNamedQuery(Computer.GET_ALL);
+        return (List<Computer>) crudService.findWithNamedQuery(Computer.GET_ALL_COMPUTER);
     }
 }

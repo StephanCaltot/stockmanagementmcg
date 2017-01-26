@@ -1,7 +1,6 @@
 package fr.univtln.mcg.jsf;
 
 import fr.univtln.mcg.Activity;
-import fr.univtln.mcg.material.Material;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;

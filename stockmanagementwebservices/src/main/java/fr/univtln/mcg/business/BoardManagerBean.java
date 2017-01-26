@@ -21,6 +21,6 @@ public class BoardManagerBean extends GenericManagerBean<Board> {
     }
 
     public List<Board> findAllBoards(){
-        return (List<Board>) crudService.findWithNamedQuery(Board.GET_ALL);
+        return (List<Board>) crudService.findWithNamedQuery(Board.GET_ALL_BOARD);
     }
 }

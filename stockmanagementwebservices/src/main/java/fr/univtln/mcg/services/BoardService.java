@@ -1,7 +1,6 @@
 package fr.univtln.mcg.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import fr.univtln.mcg.business.BoardManagerBean;
 import fr.univtln.mcg.material.pedagogic.Board;
 
@@ -37,9 +36,7 @@ public class BoardService extends GenericService<Board> {
     @GET
     @Path("nongen")
     public Response all() throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
         List<Board> boards = boardManagerBean.findAllBoards();
-        //String json = mapper.writerWithType(new TypeReference<List<Computer>>() {}).writeValueAsString(computers);
         return Response.ok().entity(boards).build();
     }
 }

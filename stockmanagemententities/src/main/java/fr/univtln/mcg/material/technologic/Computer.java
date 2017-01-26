@@ -20,15 +20,14 @@ import javax.validation.constraints.NotNull;
 @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = Computer.class)
 @Entity
 @Table(schema = "stock")
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@NamedQuery(name=Computer.GET_ALL, query="SELECT c FROM Computer c")
+@NamedQuery(name=Computer.GET_ALL_COMPUTER, query="SELECT c FROM Computer c")
 @JsonDeserialize(as = Computer.class)
 public class Computer extends Technologic {
 
-    public static final String GET_ALL = "Computer.findAll";
+    public static final String GET_ALL_COMPUTER = "Computer.findAll";
 
     @NotNull
     private boolean touch;
@@ -39,5 +38,16 @@ public class Computer extends Technologic {
         this.touch = touch;
     }
 
+    @Override
+    public String toString() {
+        String toString;
+        if (this.touch) {
+            toString = "Ordinateur tactile " + this.getBrand() + "(" + this.getId() + ")";
+        }
+        else {
+            toString = "Ordinateur " + this.getBrand() + "(" + this.getId() + ")";
+        }
 
+        return toString;
+    }
 }

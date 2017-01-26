@@ -7,7 +7,6 @@ package fr.univtln.mcg.jsf;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import fr.univtln.mcg.Room;
-import fr.univtln.mcg.material.Material;
 import org.jboss.resteasy.client.jaxrs.ResteasyClient;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
 import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
@@ -17,10 +16,14 @@ import javax.faces.bean.ManagedBean;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Logger;
 
 @ManagedBean(name = "roomService")
 @ApplicationScoped
 public class RoomService {
+
+    private static Logger logger = Logger.getLogger(String.valueOf(RoomService.class));
+
     private List<Room> list;
 
     public List<Room> create() {
@@ -34,7 +37,7 @@ public class RoomService {
         try {
             list = mapper.readValue(value, new TypeReference<List<Room>>(){});
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.info(String.valueOf(e));
         }
         response.close();
         return list;

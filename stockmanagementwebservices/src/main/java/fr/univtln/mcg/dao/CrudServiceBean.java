@@ -4,7 +4,6 @@ import javax.ejb.Local;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
-import javax.enterprise.context.Dependent;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -23,6 +22,7 @@ public class CrudServiceBean<T> implements CrudService<T> {
     @PersistenceContext(unitName = "stockmanagement")
     EntityManager em;
 
+    @Override
     public  T create(T t) {
         this.em.persist(t);
         this.em.flush();
@@ -31,27 +31,33 @@ public class CrudServiceBean<T> implements CrudService<T> {
     }
 
     @SuppressWarnings("unchecked")
+    @Override
     public  T find(Class type,Object id) {
         return (T) this.em.find(type, id);
     }
 
+    @Override
     public void delete(Class type,Object id) {
         Object ref = this.em.getReference(type, id);
         this.em.remove(ref);
     }
 
+    @Override
     public  T update(T t) {
-        return (T)this.em.merge(t);
+        return this.em.merge(t);
     }
 
+    @Override
     public List findWithNamedQuery(String namedQueryName){
         return this.em.createNamedQuery(namedQueryName).getResultList();
     }
 
+    @Override
     public List findWithNamedQuery(String namedQueryName, Map<String, Object> parameters){
         return findWithNamedQuery(namedQueryName, parameters, 0);
     }
 
+    @Override
     public List findWithNamedQuery(String queryName, int resultLimit) {
         return this.em.createNamedQuery(queryName).
                 setMaxResults(resultLimit).
@@ -62,6 +68,7 @@ public class CrudServiceBean<T> implements CrudService<T> {
         return this.em.createNativeQuery(sql, type).getResultList();
     }
 
+    @Override
     public List findWithNamedQuery(String namedQueryName, Map<String, Object> parameters,int resultLimit){
         Set<Map.Entry<String, Object>> rawParameters = parameters.entrySet();
         Query query = this.em.createNamedQuery(namedQueryName);

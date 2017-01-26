@@ -1,7 +1,6 @@
 package fr.univtln.mcg.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import fr.univtln.mcg.business.OverheadProjectorManagerBean;
 import fr.univtln.mcg.material.technologic.OverheadProjector;
 
@@ -36,9 +35,7 @@ public class OverheadProjectorService extends GenericService<OverheadProjector> 
     @GET
     @Path("nongen")
     public Response all() throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
         List<OverheadProjector> overheadProjectors = overheadProjectorManagerBean.findAllOverheadProjectors();
-        //String json = mapper.writerWithType(new TypeReference<List<Computer>>() {}).writeValueAsString(computers);
         return Response.ok().entity(overheadProjectors).build();
     }
 }

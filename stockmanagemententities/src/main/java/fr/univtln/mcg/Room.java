@@ -3,16 +3,15 @@ package fr.univtln.mcg;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import fr.univtln.mcg.enums.ERoomTypes;
-import fr.univtln.mcg.material.Material;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.List;
+import java.io.Serializable;
 
 /**
  * Created by jlng on 22/11/16.
@@ -32,7 +31,7 @@ import java.util.List;
 @Builder(builderMethodName = "nameBuilder")
 @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = Room.class)
 @NamedQuery(name=Room.GET_ALL, query="SELECT room FROM Room room")
-public class Room {
+public class Room implements Serializable{
 
     public static final String GET_ALL = "Room.findAll";
 
@@ -48,15 +47,22 @@ public class Room {
 
     @NotNull
     private ERoomTypes type;
-/*
-    @OneToMany(mappedBy="room", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    @NotNull
-    @Valid
-    @Size(max=50)
-    private List<Material> materiels;
-*/
+
     public static RoomBuilder builder(String name, ERoomTypes type) {
         return nameBuilder().name(name).type(type);
+    }
+
+
+    @Override
+    public String toString() {
+        String toString;
+        if (this.name.equals(ERoomTypes.AMPHI.toString())) {
+            toString = "Salle d' " + this.getType() + " " + getName();
+        }
+        else {
+            toString = "Salle de " + this.getType() + " " + getName();
+        }
+        return toString;
     }
 
 }

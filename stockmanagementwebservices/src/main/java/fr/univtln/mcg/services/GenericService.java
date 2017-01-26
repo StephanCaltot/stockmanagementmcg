@@ -1,24 +1,16 @@
 package fr.univtln.mcg.services;
 
 
-import fr.univtln.mcg.business.GenericManagerBean;
 import fr.univtln.mcg.business.IGenericManager;
-import fr.univtln.mcg.dao.CrudService;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import javax.ejb.EJB;
 import javax.ejb.Local;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.*;
-import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,8 +19,7 @@ import java.util.List;
 @Stateless
 @Local
 public abstract class GenericService<T> {
-    /*@Inject
-    CrudService<T> crudService;*/
+
     @Inject
     IGenericManager<T> genericManager;
 
@@ -48,7 +39,7 @@ public abstract class GenericService<T> {
     @GET
     @Path("{id}")
     public Response find(@PathParam("id") int id) {
-        T t = /*crudService.find(getType(),id);*/genericManager.find(id);
+        T t = genericManager.find(id);
         return Response.ok(t).entity(t).build();
     }
 
@@ -63,24 +54,22 @@ public abstract class GenericService<T> {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response create(T t) {
-        t = /*crudService.create(t);*/genericManager.create(t);
-        System.out.println("object cree : " + t.getClass().getSimpleName());
-        return Response.ok(t).entity(t).build();
+        T updatedT = genericManager.create(t);
+        return Response.ok(updatedT).entity(updatedT).build();
     }
 
 
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public Response update(T t) {
-        t = /*crudService.update(t);*/ genericManager.update(t);
-        return Response.ok(t).entity(t).build();
+        T updatedT = genericManager.update(t);
+        return Response.ok(updatedT).entity(updatedT).build();
     }
 
 
     @DELETE
     @Path("{id}")
     public Response delete(@PathParam("id") int id){
-        //crudService.delete(getType(),id);
         genericManager.delete(id);
         return Response.ok().build();
     }
