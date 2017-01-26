@@ -1,4 +1,3 @@
-fr/univtln/mcg/IGenericDao.class
-fr/univtln/mcg/CGenericDao.class
 fr/univtln/mcg/QueryParameter.class
-fr/univtln/mcg/App.class
+fr/univtln/mcg/CrudServiceBean.class
+fr/univtln/mcg/CrudService.class

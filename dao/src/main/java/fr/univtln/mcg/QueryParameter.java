@@ -8,20 +8,20 @@ import java.util.Map;
  */
 public class QueryParameter {
 
-    private Map mParameters = null;
+    private Map parameters = null;
 
-    private QueryParameter(String mName, Object mValue){
-        this.mParameters = new HashMap();
-        this.mParameters.put(mName, mValue);
+    private QueryParameter(String name,Object value){
+        this.parameters = new HashMap();
+        this.parameters.put(name, value);
     }
-    public static QueryParameter with(String mName,Object mValue){
-        return new QueryParameter(mName, mValue);
+    public static QueryParameter with(String name,Object value){
+        return new QueryParameter(name, value);
     }
-    public QueryParameter and(String mName,Object mValue){
-        this.mParameters.put(mName, mValue);
+    public QueryParameter and(String name,Object value){
+        this.parameters.put(name, value);
         return this;
     }
     public Map parameters(){
-        return this.mParameters;
+        return this.parameters;
     }
 }

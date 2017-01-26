@@ -5,6 +5,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.util.SparseArray;
@@ -17,9 +18,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.screetts.stockmanagement.adapters.MaterialsAdapter;
 import com.example.screetts.stockmanagement.presenters.PresenterAssignation;
-import com.example.screetts.stockmanagement.presenters.PresenterMaterials;
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
@@ -38,9 +37,7 @@ public class AssignationFragment extends Fragment {
     private BarcodeDetector barcodeDetector;
     private CameraSource cameraSource;
     private SurfaceView cameraView;
-    private TextView barcodeInfo;
-    private TextView barcodeInfoMat;
-    private TextView barcodeInfoNewRoom;
+
     private Button assign;
 
     private Context thiscontext;
@@ -50,6 +47,18 @@ public class AssignationFragment extends Fragment {
     private Room actualRoom;
     private Room newRoom;
     private Material material;
+
+    // New room
+    private TextView idNewRoom;
+    private TextView nameNewRoom;
+    private TextView typeNewRoom;
+    // Actual room
+    private TextView idRoom;
+    private TextView nameRoom;
+    private TextView typeRoom;
+    // Material
+    private TextView idMaterial;
+    private TextView brandMaterial;
 
 
     public AssignationFragment() {}
@@ -73,9 +82,18 @@ public class AssignationFragment extends Fragment {
         View view = inflater.inflate(R.layout.assign, container, false);
 
             cameraView = (SurfaceView) view.findViewById(R.id.camera_view);
-            barcodeInfo = (TextView) view.findViewById(R.id.nameRoom);
-            barcodeInfoMat = (TextView) view.findViewById(R.id.nameMaterial);
-            barcodeInfoNewRoom = (TextView) view.findViewById(R.id.nameNewRoom);
+
+            nameRoom = (TextView) view.findViewById(R.id.nameRoom);
+            brandMaterial = (TextView) view.findViewById(R.id.brandMaterial);
+            nameNewRoom = (TextView) view.findViewById(R.id.nameNewRoom);
+
+            idRoom = (TextView) view.findViewById(R.id.idRoom);
+            idMaterial = (TextView) view.findViewById(R.id.idMaterial);
+            idNewRoom = (TextView) view.findViewById(R.id.idNewRoom);
+
+            typeNewRoom = (TextView) view.findViewById(R.id.typeNewRoom);
+            typeRoom = (TextView) view.findViewById(R.id.typeRoom);
+
             assign = (Button) view.findViewById(R.id.assign_button);
 
             assign.setOnClickListener(new View.OnClickListener() {
@@ -139,32 +157,30 @@ public class AssignationFragment extends Fragment {
 
                     if (barcodes.size() != 0 ) {
                         if (nb == 0) {
-                            barcodeInfo.post(new Runnable() {    // Use the post method of the TextView
+                            nameRoom.post(new Runnable() {    // Use the post method of the TextView
                                 public void run() {
                                     value = barcodes.valueAt(0).displayValue;
-                                    barcodeInfo.setText(value);
+                                    idRoom.setText(value);
                                 }
                             });
                         }
                         else if (nb == 1)
                         {
-                            barcodeInfoMat.post(new Runnable() {    // Use the post method of the TextView
+                            idMaterial.post(new Runnable() {    // Use the post method of the TextView
                                 public void run() {
                                     value = barcodes.valueAt(0).displayValue;
-                                    barcodeInfoMat.setText(value);
+                                    idMaterial.setText(value);
                                 }
                             });
                         }
                         else if (nb == 2)
                         {
-                            barcodeInfoNewRoom.post(new Runnable() {    // Use the post method of the TextView
+                            nameNewRoom.post(new Runnable() {    // Use the post method of the TextView
                                 public void run() {
                                     value = barcodes.valueAt(0).displayValue;
-                                    barcodeInfoNewRoom.setText(value);
+                                    idNewRoom.setText(value);
                                 }
                             });
-                            Toast toast = Toast.makeText(thiscontext, "Hello", Toast.LENGTH_LONG);
-                            toast.show();
                         }
                     }
                 }
@@ -182,34 +198,58 @@ public class AssignationFragment extends Fragment {
         super.onDetach();
     }
 
-    public void setMaterial(Material material) {
+    public void setMaterial(Material material)
+    {
         this.material = material;
-        String lMessage = "materials id_room : " + material.getId() + "\nmaterials room" + material.getRoom().getId();
+        idMaterial.setText(String.valueOf(material.getId()));
+    }
+
+    public void setMaterialUpdate(Material material) {
+        this.material = material;
+        String lMessage = "Déplacement réalisé";
         Toast.makeText(getActivity(), lMessage, Toast.LENGTH_LONG).show();
+
+        Fragment fragment = new MaterialsFragment();
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.frame, fragment)
+                .commit();
     }
 
     public void setErrorMaterial(Material material)
     {
         String lMessage = "Material " + material.getId() + " is in wrong room "+ material.getRoom().getName()
                 + ". An activity log will be create.";
+
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
         builder.setMessage(lMessage).setTitle("Erreur");
 
         AlertDialog dialog = builder.create();
         dialog.show();
+        Fragment fragment = new MaterialsFragment();
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.frame, fragment)
+                .commit();
     }
 
     public void setNewRoom(Room newRoom) {
         this.newRoom = newRoom;
         String lMessage = "room id_room : " + newRoom.getId() + "\nroom name" + newRoom.getName();
         Toast.makeText(getActivity(), lMessage, Toast.LENGTH_LONG).show();
+        idNewRoom.setText(String.valueOf(newRoom.getId()));
+        nameNewRoom.setText(newRoom.getName());
+        typeNewRoom.setText(""+newRoom.getType());
     }
 
     public void setActualRoom(Room actualRoom) {
         this.actualRoom = actualRoom;
         String lMessage = "room id_room : " + actualRoom.getId() + "\nroom name" + actualRoom.getName();
         Toast.makeText(getActivity(), lMessage, Toast.LENGTH_LONG).show();
+        idRoom.setText(String.valueOf(actualRoom.getId()));
+        nameRoom.setText(actualRoom.getName());
+        typeRoom.setText(""+actualRoom.getType());
     }
 
     public Room getActualRoom() {

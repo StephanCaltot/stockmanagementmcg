@@ -7,7 +7,9 @@ import com.example.screetts.stockmanagement.retrofit.IAssignationService;
 import com.example.screetts.stockmanagement.retrofit.IMaterialsService;
 import com.example.screetts.stockmanagement.retrofit.IRoomService;
 
-import fr.univtln.mcg.ActivityLog;
+import java.util.Date;
+
+import fr.univtln.mcg.Activity;
 import fr.univtln.mcg.Room;
 import fr.univtln.mcg.material.Material;
 import retrofit2.Call;
@@ -29,8 +31,8 @@ public class PresenterAssignation {
     IRoomService roomService;
     IMaterialsService materialsService;
 
-    private ActivityLog activityLog;
     private Room room;
+
     private Material material;
 
     public PresenterAssignation(){}
@@ -43,15 +45,18 @@ public class PresenterAssignation {
         this.materialsService = retrofit.create(IMaterialsService.class);
 
     }
-/*
-    public ActivityLog createActivityLog(int id){
-        Call<ActivityLog> call = assignationService.get(id);
-        call.enqueue(new Callback<ActivityLog>() {
+
+    public void updateMaterial(Material material){
+        Call<Material> call = materialsService.update(material);
+        call.enqueue(new Callback<Material>() {
             @Override
-            public void onResponse(Call<ActivityLog> call, Response<ActivityLog> response) {
+            public void onResponse(Call<Material> call, Response<Material> response) {
+                Log.i("TEST", "update Material");
+                Log.i("TEST", ""+material.getRoom());
+
                 if (response.body() != null){
-                    activityLog = response.body();
-                    view.displayRoomGottenById(response.body());
+                    Log.i("TEST", "response not null");
+                    view.setMaterialUpdate(material);
                 }
                 else{
                     Log.i("response", "body response null");
@@ -59,12 +64,31 @@ public class PresenterAssignation {
             }
 
             @Override
-            public void onFailure(Call<ActivityLog> call, Throwable t) {
+            public void onFailure(Call<Material> call, Throwable t) {
             }
         });
-        return activityLog;
     }
-*/
+
+    public void createActivity(Activity activity){
+        Call<Activity> call = assignationService.create(activity);
+        call.enqueue(new Callback<Activity>() {
+            @Override
+            public void onResponse(Call<Activity> call, Response<Activity> response) {
+                if (response.body() != null){
+                    Log.i("TEST", "dialog alert");
+                    view.setErrorMaterial(material);
+                }
+                else{
+                    Log.i("response", "body response null");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Activity> call, Throwable t) {
+            }
+        });
+    }
+
     public Room getRoomById(int id, int nb){
         Call<Room> call = roomService.get(id);
         call.enqueue(new Callback<Room>() {
@@ -78,8 +102,9 @@ public class PresenterAssignation {
                     else if (nb == 2)
                     {
                         view.setNewRoom(room);
+                        material.setRoom(room);
+                        updateMaterial(material);
                     }
-                    //view.displayRoomGottenById(response.body());
                 }
                 else{
                     Log.i("response", "body response null");
@@ -100,12 +125,13 @@ public class PresenterAssignation {
             public void onResponse(Call<Material> call, Response<Material> response) {
                 if (response.body() != null){
                     material = response.body();
-                    Log.i("TEST", "TTTTTTTTTT" + room.getId()+"   "+material.getRoom().getId());
                     if(room.getId() != material.getRoom().getId())
                     {
                         Log.i("TEST", "Erreur: le materiel ne se trouve pas dans la bonne salle");
-                        view.setErrorMaterial(material);
+                        Activity activity = Activity.builder(material, material.getRoom(), String.valueOf(new Date())).build();
+                        createActivity(activity);
                     }
+                    view.setMaterial(material);
                 }
                 else{
                     Log.i("response", "body response null");

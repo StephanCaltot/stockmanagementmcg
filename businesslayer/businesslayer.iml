@@ -23,7 +23,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax:javaee-api:7.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.sun.mail:javax.mail:1.5.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.activation:activation:1.1" level="project" />
-    <orderEntry type="library" name="Maven: fr.univtln.mcg:stockmanagemententities:1.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: fr.univtln.mcg:stockmanagemententities:1.0-android-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.persistence:eclipselink:2.5.2" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.persistence:commonj.sdo:2.1.1" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.persistence:javax.persistence:2.1.0" level="project" />
@@ -44,5 +44,8 @@
     <orderEntry type="library" name="Maven: org.glassfish.grizzly:grizzly-rcm:2.2.16" level="project" />
     <orderEntry type="library" name="Maven: com.sun.jersey:jersey-server:1.19" level="project" />
     <orderEntry type="library" name="Maven: fr.univtln.mcg:dao:1.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish:javax.ejb:3.1" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish:javax.transaction:3.1" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish:javax.annotation:3.1" level="project" />
   </component>
 </module>
