@@ -2,7 +2,6 @@ package fr.univtln.mcg.business;
 
 import fr.univtln.mcg.Room;
 
-import javax.ejb.Local;
 import javax.ejb.Stateless;
 import java.util.List;
 

@@ -23,11 +23,16 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(builderMethodName = "osBuilder")
-@NamedQuery(name=WorkPhone.GET_ALL, query="SELECT w FROM WorkPhone w")
+@NamedQuery(name=WorkPhone.GET_ALL_WORK_PHONE, query="SELECT w FROM WorkPhone w")
 public class WorkPhone extends Technologic {
 
-    public static final String GET_ALL = "WorkPhone.findAll";
+    public static final String GET_ALL_WORK_PHONE = "WorkPhone.findAll";
 
     @NotNull
     private EWorkPhoneOs os;
+
+    @Override
+    public String toString(){
+        return "Téléphone" + this.getOs() + " " + this.getBrand() + "( " + this.getId() + " )";
+    }
 }

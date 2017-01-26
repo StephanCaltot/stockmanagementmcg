@@ -23,12 +23,17 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(builderMethodName = "typeBuilder")
-@NamedQuery(name=ArmChair.GET_ALL, query="SELECT a FROM ArmChair a")
+@NamedQuery(name=ArmChair.GET_ALL_ARMCHAIR, query="SELECT a FROM ArmChair a")
 public class ArmChair extends Educational {
 
-    public static final String GET_ALL = "ArmChair.findAll";
+    public static final String GET_ALL_ARMCHAIR = "ArmChair.findAll";
 
     @NotNull
     private EArmChairTypes type;
+
+    @Override
+    public String toString() {
+        return this.getType() + " ( " + this.getId() + " )" ;
+    }
 
 }

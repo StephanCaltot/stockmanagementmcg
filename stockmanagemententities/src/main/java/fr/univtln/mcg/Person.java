@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
 /**
  * Created by screetts on 28/11/16.
@@ -22,7 +23,7 @@ import javax.validation.constraints.Size;
 @Builder(builderMethodName = "nameBuilder")
 @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id",scope = Person.class)
 @NamedQuery(name=Person.GET_ALL, query="SELECT p FROM Person p")
-public class Person {
+public class Person implements Serializable{
 
     public static final String GET_ALL = "Person.findAll";
 

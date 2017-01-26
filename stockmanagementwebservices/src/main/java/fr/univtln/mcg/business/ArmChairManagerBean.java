@@ -20,6 +20,6 @@ public class ArmChairManagerBean extends GenericManagerBean<ArmChair> {
     }
 
     public List<ArmChair> findAllArmChairs(){
-        return (List<ArmChair>) crudService.findWithNamedQuery(ArmChair.GET_ALL);
+        return (List<ArmChair>) crudService.findWithNamedQuery(ArmChair.GET_ALL_ARMCHAIR);
     }
 }

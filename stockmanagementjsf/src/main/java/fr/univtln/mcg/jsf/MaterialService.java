@@ -19,17 +19,20 @@ import org.jboss.resteasy.client.jaxrs.ResteasyWebTarget;
 
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
-import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
+import java.util.logging.Logger;
 
 
 @ManagedBean(name = "materialService")
 @ApplicationScoped
 public class MaterialService implements Serializable {
+
+    private static Logger logger = Logger.getLogger(String.valueOf(MaterialService.class));
+
 
     private List<Material> list;
 
@@ -44,11 +47,12 @@ public class MaterialService implements Serializable {
         try {
             list = mapper.readValue(value, new TypeReference<List<Material>>(){});
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.info(String.valueOf(e));
         }
         response.close();
         return list;
     }
+
 
     public void update(Material material, Room room) {
         material.setRoom(room);

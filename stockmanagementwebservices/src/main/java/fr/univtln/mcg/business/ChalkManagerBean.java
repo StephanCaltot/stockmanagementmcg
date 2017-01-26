@@ -21,7 +21,7 @@ public class ChalkManagerBean extends GenericManagerBean<Chalk> {
     }
 
     public List<Chalk> findAllChalks(){
-        return (List<Chalk>) crudService.findWithNamedQuery(Chalk.GET_ALL);
+        return (List<Chalk>) crudService.findWithNamedQuery(Chalk.GET_ALL_CHALK);
     }
 
 }

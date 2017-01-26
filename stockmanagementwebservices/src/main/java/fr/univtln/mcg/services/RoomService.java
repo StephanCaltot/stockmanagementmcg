@@ -26,7 +26,7 @@ public class RoomService extends GenericService<Room> {
     @GET
     @Path("nongen/{id}")
     public Response findNonGeneric(@PathParam("id") int id) {
-        Room room = /*crudService.find(getType(),id);*/roomManager.findRoomById(id);
+        Room room = roomManager.findRoomById(id);
         return Response.ok(room).entity(room).build();
     }
 

@@ -3,7 +3,6 @@ package fr.univtln.mcg.business;
 import fr.univtln.mcg.material.technologic.WorkPhone;
 
 import javax.ejb.Stateless;
-import javax.resource.spi.work.Work;
 import java.util.List;
 
 /**
@@ -22,7 +21,7 @@ public class WorkPhoneManagerBean extends GenericManagerBean<WorkPhone> {
     }
 
     public List<WorkPhone> findAllWorkPhones(){
-        return (List<WorkPhone>) crudService.findWithNamedQuery(WorkPhone.GET_ALL);
+        return (List<WorkPhone>) crudService.findWithNamedQuery(WorkPhone.GET_ALL_WORK_PHONE);
     }
 
 }

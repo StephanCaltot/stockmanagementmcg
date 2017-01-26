@@ -47,16 +47,6 @@ public class clientrest {
         Person martinez = Person.builder("Martinez").build();
         Person caltot   = Person.builder("Caltot").build();
 
-
-        //computer.setMTouch(true);
-        //computer.setMBrand(ETechnologicBrands.EPSON);
-        //computer.setMRoom(room3);
-
-        //Computer computer2 = new Computer();
-        //computer2.setMTouch(true);
-        //computer2.setMBrand(ETechnologicBrands.ASUS);
-        //computer2.setMRoom(room2);
-
         Material chalk = Chalk.builder().color(EChalkColors.WHITE).room(room2).build();
 
         webResource.path("people").type(MediaType.APPLICATION_JSON).post(guillon);
@@ -72,8 +62,7 @@ public class clientrest {
         webResource.path("computers").type(MediaType.APPLICATION_JSON).post(computer);
         webResource.path("computers").type(MediaType.APPLICATION_JSON).post(computer2);
 
-        System.out.println(new Date().toString());
-        Activity activity = Activity.builder(computer, room, "te").build();
+        Activity activity = Activity.builder(computer, room, "aujourd'hui").build();
 
         webResource.path("activities").type(MediaType.APPLICATION_JSON).post(activity);
     }

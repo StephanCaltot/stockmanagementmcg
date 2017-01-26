@@ -2,7 +2,6 @@ package fr.univtln.mcg.services;
 
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import fr.univtln.mcg.business.ComputerManagerBean;
 import fr.univtln.mcg.material.technologic.Computer;
 
@@ -34,9 +33,7 @@ public class ComputerService extends GenericService<Computer> {
     @GET
     @Path("nongen")
     public Response all() throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
         List<Computer> computers = computerManagerBean.findAllComputers();
-        //String json = mapper.writerWithType(new TypeReference<List<Computer>>() {}).writeValueAsString(computers);
         return Response.ok().entity(computers).build();
     }
 }

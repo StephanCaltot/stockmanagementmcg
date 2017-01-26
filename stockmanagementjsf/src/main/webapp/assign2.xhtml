@@ -20,9 +20,9 @@
 
             <p:dialog header="Selected Values" modal="true" showEffect="fade" widgetVar="dlg" resizable="false">
                 <p:panelGrid columns="2" id="display" columnClasses="label,output">
-                    <h:outputText value="Material:" />
+                    <h:outputText value="Ancienne salle:" />
                     <h:outputText value="#{multiSelectView.selectionMaterial.room.name}" />
-                    <h:outputText value="Room:" />
+                    <h:outputText value="Nouvelle salle:" />
                     <h:outputText value="#{multiSelectView.selectionRoom.name}" />
                     <p:commandButton ajax="false" value="Update" action="#{materialService.update(multiSelectView.selectionMaterial, multiSelectView.selectionRoom)}"/>
 

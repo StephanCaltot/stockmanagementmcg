@@ -1,7 +1,6 @@
 package fr.univtln.mcg.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import fr.univtln.mcg.business.ChalkManagerBean;
 import fr.univtln.mcg.material.pedagogic.Chalk;
 
@@ -37,9 +36,7 @@ public class ChalkService extends GenericService<Chalk> {
     @GET
     @Path("nongen")
     public Response all() throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
         List<Chalk> chalks = chalkManagerBean.findAllChalks();
-        //String json = mapper.writerWithType(new TypeReference<List<Computer>>() {}).writeValueAsString(computers);
         return Response.ok().entity(chalks).build();
     }
 }

@@ -2,7 +2,6 @@ package fr.univtln.mcg.jsf;
 
 import fr.univtln.mcg.Room;
 import fr.univtln.mcg.material.Material;
-
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
@@ -10,8 +9,6 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.model.SelectItem;
-import javax.faces.model.SelectItemGroup;
-
 
 /**
  * Created by jlng on 05/12/16.
@@ -26,8 +23,8 @@ public class MultiSelectView {
     @ManagedProperty("#{roomService}")
     private RoomService serviceRoom;
 
-    private static List<SelectItem> categories = new ArrayList<SelectItem>();
-    private static List<String> categoriesName = new ArrayList<String>();
+    private static List<SelectItem> categories = new ArrayList<>();
+    private static List<String> categoriesName = new ArrayList<>();
 
     private List<Material> materials;
     private Material selectionMaterial;
@@ -39,36 +36,6 @@ public class MultiSelectView {
     public void init() {
         materials = serviceMaterial.create();
         rooms = serviceRoom.create();
-        /*
-        List<List<SelectItem>> test = new ArrayList<>();
-        categories = new ArrayList<SelectItem>();
-        categoriesName = new ArrayList<String>();
-        SelectItem option;
-        //getList(materials);
-        List<List> cat = new ArrayList();
-        int pos;
-        List<SelectItemGroup> groups = new ArrayList<>();
-        for (Material o : materials)
-        {
-            String className = o.getClass().getSimpleName();
-            if(! categoriesName.contains(className))
-            {
-                groups.add(new SelectItemGroup(className));
-                categoriesName.add(className);
-                cat.add(new ArrayList<>());
-                test.add(new ArrayList<SelectItem>());
-            }
-            pos = categoriesName.indexOf(className);
-            ((List)cat.get(pos)).add(o);
-            option = new SelectItem(o.toString());
-            ((List)test.get(pos)).add(option);
-        }
-        for (int i = 0; i < groups.size(); i++)
-        {
-            groups.get(i).setSelectItems(test.get(i).toArray(new SelectItem[test.get(i).size()]));
-        }
-        categories.addAll(groups);
-        */
     }
 
     public MaterialService getServiceMaterial() {

@@ -1,6 +1,5 @@
 package fr.univtln.mcg.business;
 
-import fr.univtln.mcg.material.Material;
 import fr.univtln.mcg.material.technologic.Technologic;
 
 import javax.ejb.Stateless;
@@ -22,6 +21,6 @@ public class TechnologicManagerBean extends GenericManagerBean<Technologic> {
     }
 
     public List<Technologic> findAllTechnologics(){
-        return (List<Technologic>) crudService.findWithNamedQuery(Technologic.GET_ALL);
+        return (List<Technologic>) crudService.findWithNamedQuery(Technologic.GET_ALL_TECHNOLOGIC);
     }
 }

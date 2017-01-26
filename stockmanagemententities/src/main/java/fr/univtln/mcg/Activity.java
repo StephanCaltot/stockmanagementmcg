@@ -10,8 +10,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created by screetts on 28/11/16.
@@ -45,10 +43,16 @@ public class Activity implements Serializable{
     @NotNull
     private Room room;
 
+    @NotNull
     private String date;
 
     public static  ActivityBuilder builder(Material material, Room room, String date) {
         return allBuilder().material(material).room(room).date(date);
+    }
+
+    @Override
+    public String toString(){
+        return "Activité ( " + this.getId() + " ) -> " + "Salle : " + this.getRoom().getName() + " Materiel : " + this.getMaterial().toString() + " le " + this.getDate();
     }
 
 }

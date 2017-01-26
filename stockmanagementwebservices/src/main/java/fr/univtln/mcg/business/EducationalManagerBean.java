@@ -21,6 +21,6 @@ public class EducationalManagerBean extends GenericManagerBean<Educational> {
     }
 
     public List<Educational> findAllEducationals(){
-        return (List<Educational>) crudService.findWithNamedQuery(Educational.GET_ALL);
+        return (List<Educational>) crudService.findWithNamedQuery(Educational.GET_ALL_EDUCATIONAL);
     }
 }

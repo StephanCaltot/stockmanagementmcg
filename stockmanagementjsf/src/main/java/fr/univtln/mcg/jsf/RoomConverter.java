@@ -17,6 +17,7 @@ import javax.faces.convert.FacesConverter;
 @FacesConverter("roomConverter")
 public class RoomConverter implements Converter{
 
+    @Override
     public Object getAsObject(FacesContext fc, UIComponent uic, String value) {
         if(value != null && value.trim().length() > 0) {
             try {
@@ -31,6 +32,7 @@ public class RoomConverter implements Converter{
         }
     }
 
+    @Override
     public String getAsString(FacesContext fc, UIComponent uic, Object object) {
         if(object != null) {
             return String.valueOf(((Room) object).getId());

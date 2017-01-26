@@ -21,6 +21,6 @@ public class OverheadProjectorManagerBean extends GenericManagerBean<OverheadPro
     }
 
     public List<OverheadProjector> findAllOverheadProjectors(){
-        return (List<OverheadProjector>) crudService.findWithNamedQuery(OverheadProjector.GET_ALL);
+        return (List<OverheadProjector>) crudService.findWithNamedQuery(OverheadProjector.GET_ALL_OVERHEAD_PROJECTOR);
     }
 }

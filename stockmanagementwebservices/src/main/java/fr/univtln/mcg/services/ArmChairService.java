@@ -1,7 +1,6 @@
 package fr.univtln.mcg.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import fr.univtln.mcg.business.ArmChairManagerBean;
 import fr.univtln.mcg.material.pedagogic.ArmChair;
 
@@ -37,9 +36,7 @@ public class ArmChairService extends GenericService<ArmChair> {
     @GET
     @Path("nongen")
     public Response all() throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
         List<ArmChair> armChairs = armChairManagerBean.findAllArmChairs();
-        //String json = mapper.writerWithType(new TypeReference<List<Computer>>() {}).writeValueAsString(computers);
         return Response.ok().entity(armChairs).build();
     }
 

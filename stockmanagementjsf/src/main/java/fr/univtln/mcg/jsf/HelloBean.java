@@ -1,18 +1,27 @@
 package fr.univtln.mcg.jsf;
 
 import javax.enterprise.context.SessionScoped;
-import javax.faces.bean.ManagedBean;
 import javax.inject.Named;
 import java.io.Serializable;
 
 @Named
 @SessionScoped
 public class HelloBean implements Serializable {
+
     private static final long serialVersionUID = 1L;
 
     private String message = "Hello world";
 
     private String newMessage;
+
+    private int compteur = 0;
+
+
+    public String updateMessage() {
+        message = newMessage;
+        return "welcome";
+    }
+
 
     public String getNewMessage() {
         return newMessage;
@@ -22,8 +31,6 @@ public class HelloBean implements Serializable {
         this.newMessage = newMessage;
     }
 
-    private int compteur = 0;
-
     public String getMessage() {
         return message + " " + compteur++;
     }
@@ -32,8 +39,5 @@ public class HelloBean implements Serializable {
         this.message = message;
     }
 
-    public String updateMessage() {
-        message = newMessage;
-        return "welcome";
-    }
+
 }
