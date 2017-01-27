@@ -19,6 +19,14 @@ import java.util.List;
  * Created by marti on 08/12/2016.
  */
 
+/*
+ * REST Service at url /overheadprojectors
+ * Provides ways to create/update an entity (see superclass)
+ * and also get a overheadprojector by his id or get all the overheadprojectors
+ * from the database.
+ */
+
+
 @Stateless
 @Produces(MediaType.APPLICATION_JSON)
 @Path("overheadprojectors")
@@ -26,19 +34,29 @@ public class OverheadProjectorService extends GenericService<OverheadProjector> 
     @Inject
     OverheadProjectorManagerBean overheadProjectorManagerBean;
 
+    /**
+     * @param id
+     * @return Response with the overheadprojector loaded from
+     * the database with this id
+     */
+
     @GET
-    @Path("nongen/{id}")
+    @Path("/{id}")
     public Response findNonGen(@PathParam("id") int id){
         OverheadProjector overheadProjector = overheadProjectorManagerBean.findOverheadProjectorById(id);
         return Response.ok().entity(overheadProjector).build();
     }
 
+    /**
+     * @return
+     * @throws JsonProcessingException
+     * Response with the list of all the overhead projectors
+     * in the database
+     */
+
     @GET
-    @Path("nongen")
     public Response all() throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
         List<OverheadProjector> overheadProjectors = overheadProjectorManagerBean.findAllOverheadProjectors();
-        //String json = mapper.writerWithType(new TypeReference<List<Computer>>() {}).writeValueAsString(computers);
         return Response.ok().entity(overheadProjectors).build();
     }
 }

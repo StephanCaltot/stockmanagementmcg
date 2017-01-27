@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\marti\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-annotations\8.4.0\ea392375cf9ff59234a82e7928a204215ccc98cd\butterknife-annotations-8.4.0.jar"
+        revision="24.0.3"
+        sha1="ea392375cf9ff59234a82e7928a204215ccc98cd">
+        <dex dex="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\butterknife-annotations-8.4.0-c4686952694ebca639b3c6253c4f2cf9f386b733.jar" />
+    </item>
+    <item
+        jar="C:\Users\marti\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.7.0\19f42c154ffc689f40a77613bc32caeb17d744e3\jackson-annotations-2.7.0.jar"
+        revision="24.0.3"
+        sha1="19f42c154ffc689f40a77613bc32caeb17d744e3">
+        <dex dex="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\jackson-annotations-2.7.0-af80dbc4f6137d72b8459371cb6e131105c2fc97.jar" />
+    </item>
+    <item
+        jar="C:\Users\marti\.gradle\caches\modules-2\files-2.1\javax.persistence\persistence-api\1.0\5725f57873e05e068803e2bf9d5a8ea3740ffec5\persistence-api-1.0.jar"
+        revision="24.0.3"
+        sha1="5725f57873e05e068803e2bf9d5a8ea3740ffec5">
+        <dex dex="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\persistence-api-1.0-744bd2c3d1bf22f122b607465c654a635010943a.jar" />
+    </item>
+    <item
+        jar="C:\Users\marti\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.8.0\5ea7af56cc7c567ed9856d99efb30740e9b17ff\okio-1.8.0.jar"
+        revision="24.0.3"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\okio-1.8.0-8f852289e5d87740c53e71ed5490e9877c402d14.jar" />
+    </item>
+    <item
+        jar="C:\Users\marti\Desktop\Cours M2\androidclient\app\libs\stockmanagemententities.jar"
+        revision="24.0.3"
+        sha1="6001563d2704f9d9422e0259ba3004a838eaa1cb">
+        <dex dex="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\stockmanagemententities-592e208bc15aec9a17bba4b78cb4071d71858472.jar" />
+    </item>
+    <item
+        jar="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        revision="24.0.3"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-03861393b3e3b270074b1895bf3d6adf43360547.jar" />
+    </item>
+    <item
+        jar="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        revision="24.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-cdb08ea84e7cc9bcb829b398ceba64a41257931d.jar" />
+    </item>
+    <item
+        jar="C:\Users\marti\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.7.2\8b8310381b690e317f5f0574e9b2dd7034778b4c\jackson-core-2.7.2.jar"
+        revision="24.0.3"
+        sha1="8b8310381b690e317f5f0574e9b2dd7034778b4c">
+        <dex dex="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\jackson-core-2.7.2-1a6f968f2271115ff0bbab6eb2a766b7eeeb5b31.jar" />
+    </item>
+    <item
+        jar="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\exploded-aar\com.jakewharton\butterknife\8.4.0\jars\classes.jar"
+        revision="24.0.3"
+        sha1="a07818a1ecabdb149998823429cce555af4b9cba">
+        <dex dex="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-d1df7a23479c5f9bc428e77fb3f7f59e501f40ce.jar" />
+    </item>
+    <item
+        jar="C:\Users\marti\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-jackson\2.1.0\ef33476a62d9c62dfca6b6c9e086f2e3343a96f4\converter-jackson-2.1.0.jar"
+        revision="24.0.3"
+        sha1="ef33476a62d9c62dfca6b6c9e086f2e3343a96f4">
+        <dex dex="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\converter-jackson-2.1.0-0fb03216bc8030e002d2e7d8cbeb642eeaa9579b.jar" />
+    </item>
+    <item
+        jar="C:\Users\marti\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.7.2\84ffa765dd258dbab8695963c41308b054f3a1cb\jackson-databind-2.7.2.jar"
+        revision="24.0.3"
+        sha1="84ffa765dd258dbab8695963c41308b054f3a1cb">
+        <dex dex="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\jackson-databind-2.7.2-4065c017eb25975e2bcc25cb848eadd0439c60f6.jar" />
+    </item>
+    <item
+        jar="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        revision="24.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-1065b09c9770ef6de0a67fcac6d551de098acee8.jar" />
+    </item>
+    <item
+        jar="C:\Users\marti\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.3.0\2b802460eea20f8f2ad9c08c74e0f14718e88aa9\okhttp-3.3.0.jar"
+        revision="24.0.3"
+        sha1="2b802460eea20f8f2ad9c08c74e0f14718e88aa9">
+        <dex dex="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\okhttp-3.3.0-92c343d9f4449077266f697d0b0b711568fbec1a.jar" />
+    </item>
+    <item
+        jar="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        revision="24.0.3"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\internal_impl-23.4.0-63f13c309aa358e44bfd68e3cad8520aa1fcd4e3.jar" />
+    </item>
+    <item
+        jar="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        revision="24.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\classes-c27e468ffffc24493f0d105cbd10803814717a41.jar" />
+    </item>
+    <item
+        jar="C:\Users\marti\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
+        revision="24.0.3"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\retrofit-2.1.0-d4c67f447c8d7092879a4d49f2791cb91ce261d2.jar" />
+    </item>
+    <item
+        jar="C:\Users\marti\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.1.0\support-annotations-24.1.0.jar"
+        revision="24.0.3"
+        sha1="8a23146e1a8c7cb4758e3d3f62449213f1e51f67">
+        <dex dex="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\preJackPackagedLibraries\debug\jars\8000\1f\support-annotations-24.1.0-f12af32eadb3bbb3330e4cd8ae468b451d142b60.jar" />
+    </item>
+
+</items>

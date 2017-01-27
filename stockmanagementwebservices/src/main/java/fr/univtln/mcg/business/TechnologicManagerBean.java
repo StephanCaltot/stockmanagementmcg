@@ -10,6 +10,12 @@ import java.util.List;
  * Created by marti on 07/12/2016.
  */
 
+/**
+ * Business class for the Technologics.
+ * Provides way to do the basic CRUD operations
+ * on the Technologic class.
+ */
+
 @Stateless
 public class TechnologicManagerBean extends GenericManagerBean<Technologic> {
 

@@ -16,6 +16,13 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
+/*
+ * REST Service at url /computers
+ * Provides ways to create/update an entity (see superclass)
+ * and also get a computer by his id or get all the computers
+ * from the database.
+ */
+
 
 @Stateless
 @Produces(MediaType.APPLICATION_JSON)
@@ -24,19 +31,28 @@ public class ComputerService extends GenericService<Computer> {
     @Inject
     ComputerManagerBean computerManagerBean;
 
+
+    /**
+     * @param id
+     * @return Response with the Computer loaded from the database
+     * with the id in parameter
+     */
     @GET
-    @Path("nongen/{id}")
+    @Path("/{id}")
     public Response findNonGen(@PathParam("id") int id){
         Computer computer = computerManagerBean.findComputerById(id);
         return Response.ok().entity(computer).build();
     }
 
+    /**
+     * @return Response with the json including all the Computers
+     * in the database
+     * @throws JsonProcessingException
+     */
+
     @GET
-    @Path("nongen")
     public Response all() throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
         List<Computer> computers = computerManagerBean.findAllComputers();
-        //String json = mapper.writerWithType(new TypeReference<List<Computer>>() {}).writeValueAsString(computers);
         return Response.ok().entity(computers).build();
     }
 }

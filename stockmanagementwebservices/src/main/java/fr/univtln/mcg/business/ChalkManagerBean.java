@@ -9,6 +9,12 @@ import java.util.List;
  * Created by marti on 08/12/2016.
  */
 
+/**
+ * Business class for the Chalks.
+ * Provides way to do the basic CRUD operations
+ * on the Chalk class.
+ */
+
 @Stateless
 public class ChalkManagerBean extends GenericManagerBean<Chalk> {
 

@@ -17,6 +17,12 @@ import java.util.List;
  * Created by marti on 28/11/2016.
  */
 
+/**
+ * Business class for the People.
+ * Provides way to do the basic CRUD operations
+ * on the Person class.
+ */
+
 @Stateless
 public class PersonManagerBean extends GenericManagerBean<Person> {
 

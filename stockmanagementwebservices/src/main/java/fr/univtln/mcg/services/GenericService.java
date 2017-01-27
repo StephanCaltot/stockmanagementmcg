@@ -1,88 +1,60 @@
 package fr.univtln.mcg.services;
 
 
-import fr.univtln.mcg.business.GenericManagerBean;
 import fr.univtln.mcg.business.IGenericManager;
-import fr.univtln.mcg.dao.CrudService;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
-import javax.ejb.EJB;
 import javax.ejb.Local;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.*;
-import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.io.IOException;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by screetts on 16/11/16.
  */
+
+/*
+ * Generic service every other REST services
+ * will inheritate from.
+ * Only contains C and U from the CRUD because of an issue
+ * about the genericity  on the R and D with jackson when deserializing
+ * into a class inheriting from an abstract class (can't find the class)
+ */
+
 @Stateless
 @Local
 public abstract class GenericService<T> {
-    /*@Inject
-    CrudService<T> crudService;*/
     @Inject
     IGenericManager<T> genericManager;
 
-    public Class getType(){
-        Class<T> type = null;
-        ParameterizedType thisClass = (ParameterizedType) this.getClass().getGenericSuperclass();
-        Type dollarsT = thisClass.getActualTypeArguments()[0];
-        if (dollarsT instanceof Class) {
-            type = (Class<T>)dollarsT;
-        }
-        else if (dollarsT instanceof ParameterizedType) {
-            type = (Class<T>)((ParameterizedType)dollarsT).getRawType();
-        }
-        return type;
-    }
 
-    @GET
-    @Path("{id}")
-    public Response find(@PathParam("id") int id) {
-        T t = /*crudService.find(getType(),id);*/genericManager.find(id);
-        return Response.ok(t).entity(t).build();
-    }
-
-
-    @GET
-    public Response findAll() throws IOException {
-        List<T> t = genericManager.findAll();
-        return Response.ok().entity(t).build();
-    }
-
-
+    /**
+     * @param t entity to create
+     * @return Response with the created entity
+     * When accessing the url /<classname> (plural) with POST
+     * we persist the passed entity.
+     */
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     public Response create(T t) {
-        t = /*crudService.create(t);*/genericManager.create(t);
+        t = genericManager.create(t);
         System.out.println("object cree : " + t.getClass().getSimpleName());
         return Response.ok(t).entity(t).build();
     }
 
+    /**
+     * @param t entity to update
+     * @return Response with the updated entity
+     * When accessing the url /<classname> (plural) with PUT
+     * we update the passed entity
+     */
 
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public Response update(T t) {
-        t = /*crudService.update(t);*/ genericManager.update(t);
+        t = genericManager.update(t);
         return Response.ok(t).entity(t).build();
-    }
-
-
-    @DELETE
-    @Path("{id}")
-    public Response delete(@PathParam("id") int id){
-        //crudService.delete(getType(),id);
-        genericManager.delete(id);
-        return Response.ok().build();
     }
 
 }

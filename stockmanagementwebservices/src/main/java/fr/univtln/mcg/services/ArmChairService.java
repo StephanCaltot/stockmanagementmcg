@@ -19,6 +19,14 @@ import java.util.List;
  * Created by marti on 08/12/2016.
  */
 
+/*
+ * REST Service at url /armchairs
+ * Provides ways to create/update an entity (see superclass)
+ * and also get a armchair by his id or get all the armchairs
+ * from the database.
+ */
+
+
 @Stateless
 @Produces(MediaType.APPLICATION_JSON)
 @Path("armchairs")
@@ -27,19 +35,28 @@ public class ArmChairService extends GenericService<ArmChair> {
     @Inject
     ArmChairManagerBean armChairManagerBean;
 
+    /**
+     *
+     * @param id
+     * @return Response with the ArmChair from the database
+     * with the id in parameter
+     */
+
     @GET
-    @Path("nongen/{id}")
+    @Path("/{id}")
     public Response findNonGen(@PathParam("id") int id){
         ArmChair armChair = armChairManagerBean.findArmChairById(id);
         return Response.ok().entity(armChair).build();
     }
 
+    /**
+     * @return Response with all the ArmChairs in the database
+     * @throws JsonProcessingException
+     */
+
     @GET
-    @Path("nongen")
     public Response all() throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
         List<ArmChair> armChairs = armChairManagerBean.findAllArmChairs();
-        //String json = mapper.writerWithType(new TypeReference<List<Computer>>() {}).writeValueAsString(computers);
         return Response.ok().entity(armChairs).build();
     }
 

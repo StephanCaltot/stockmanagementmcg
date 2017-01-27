@@ -14,6 +14,13 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
+/*
+ * REST Service at url /rooms
+ * Provides ways to create/update an entity (see superclass)
+ * and also get a room by his id or get all the rooms
+ * from the database.
+ */
+
 
 @Stateless
 @Produces(MediaType.APPLICATION_JSON)
@@ -23,15 +30,25 @@ public class RoomService extends GenericService<Room> {
     @Inject
     RoomManagerBean roomManager;
 
+    /**
+     * @param id
+     * @return Response with the room loaded from the database
+     * with the id in parameter
+     */
+
     @GET
-    @Path("nongen/{id}")
+    @Path("/{id}")
     public Response findNonGeneric(@PathParam("id") int id) {
-        Room room = /*crudService.find(getType(),id);*/roomManager.findRoomById(id);
+        Room room = roomManager.findRoomById(id);
         return Response.ok(room).entity(room).build();
     }
 
+    /**
+     * @return Reponse with all the rooms
+     * in the database
+     */
+
     @GET
-    @Path("nongen")
     public Response findAllNonGeneric(){
         List<Room> rooms = roomManager.findAllRooms();
         return Response.ok().entity(rooms).build();

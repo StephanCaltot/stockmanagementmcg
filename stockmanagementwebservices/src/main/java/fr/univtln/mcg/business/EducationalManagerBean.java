@@ -9,6 +9,12 @@ import java.util.List;
  * Created by marti on 07/12/2016.
  */
 
+/**
+ * Business class for the Educationals.
+ * Provides way to do the basic CRUD operations
+ * on the Educational class.
+ */
+
 @Stateless
 public class EducationalManagerBean extends GenericManagerBean<Educational> {
 

@@ -9,6 +9,13 @@ import java.util.List;
 /**
  * Created by marti on 28/11/2016.
  */
+
+/**
+ * Business class for the Rooms.
+ * Provides way to do the basic CRUD operations
+ * on the Room class.
+ */
+
 @Stateless
 public class RoomManagerBean extends GenericManagerBean<Room> {
 

@@ -19,6 +19,14 @@ import java.util.List;
  * Created by marti on 08/12/2016.
  */
 
+/*
+ * REST Service at url /boards
+ * Provides ways to create/update an entity (see superclass)
+ * and also get a board by his id or get all the boards
+ * from the database.
+ */
+
+
 @Stateless
 @Produces(MediaType.APPLICATION_JSON)
 @Path("boards")
@@ -27,19 +35,29 @@ public class BoardService extends GenericService<Board> {
     @Inject
     BoardManagerBean boardManagerBean;
 
+    /**
+     * @param id
+     * @return Response with the Board loaded from the
+     * database with the id in parameter
+     */
+
     @GET
-    @Path("nongen/{id}")
+    @Path("/{id}")
     public Response findNonGen(@PathParam("id") int id){
         Board board = boardManagerBean.findBoardById(id);
         return Response.ok().entity(board).build();
     }
 
+    /**
+     * @return Response with the json including all the
+     * boards in the database
+     * @throws JsonProcessingException
+     *
+     */
+
     @GET
-    @Path("nongen")
     public Response all() throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
         List<Board> boards = boardManagerBean.findAllBoards();
-        //String json = mapper.writerWithType(new TypeReference<List<Computer>>() {}).writeValueAsString(computers);
         return Response.ok().entity(boards).build();
     }
 }

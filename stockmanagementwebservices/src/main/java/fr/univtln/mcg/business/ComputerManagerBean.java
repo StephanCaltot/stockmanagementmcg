@@ -9,6 +9,12 @@ import java.util.List;
  * Created by marti on 07/12/2016.
  */
 
+/**
+ * Business class for the Computers.
+ * Provides way to do the basic CRUD operations
+ * on the Computer class.
+ */
+
 @Stateless
 public class ComputerManagerBean extends GenericManagerBean<Computer> {
 

@@ -13,6 +13,7 @@ import javax.validation.constraints.Size;
 /**
  * Created by screetts on 28/11/16.
  */
+
 @Entity
 @Table(schema = "stock")
 @TableGenerator(name="PERSON_GEN", allocationSize=1)

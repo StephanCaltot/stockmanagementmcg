@@ -16,17 +16,29 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
+/*
+ * REST Service at url /technologics
+ * Provides ways to create/update an entity (see superclass)
+ * and also get a technologic by his id or get all the technologics
+ * from the database.
+ */
+
 
 @Stateless
 @Produces(MediaType.APPLICATION_JSON)
-@Path("technologic")
+@Path("technologics")
 public class TechnologicService extends GenericService<Technologic> {
 
     @Inject
     TechnologicManagerBean technologicManagerBean;
 
+    /**
+     * @return Response with a json including all the
+     * technologics in the database
+     * @throws JsonProcessingException
+     */
+
     @GET
-    @Path("nongen")
     public Response all() throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         List<Technologic> technologics = technologicManagerBean.findAllTechnologics();
@@ -34,8 +46,14 @@ public class TechnologicService extends GenericService<Technologic> {
         return Response.ok().entity(json).build();
     }
 
+    /**
+     * @param id
+     * @return Reponse with the Technologic loaded from the
+     * database with the id in parameter
+     */
+
     @GET
-    @Path("nongen/{id}")
+    @Path("/{id}")
     public Response findNonGenericById(@PathParam("id") int id){
         Technologic technologics = technologicManagerBean.findTechnologicById(id);
         return Response.ok().entity(technologics).build();

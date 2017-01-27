@@ -9,6 +9,12 @@ import java.util.List;
  * Created by marti on 28/11/2016.
  */
 
+/**
+ * Business class for the Materials.
+ * Provides way to do the basic CRUD operations
+ * on the Material class.
+ */
+
 @Stateless
 public class MaterialManagerBean extends GenericManagerBean<Material> {
 

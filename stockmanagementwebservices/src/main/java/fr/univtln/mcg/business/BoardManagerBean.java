@@ -9,6 +9,12 @@ import java.util.List;
  * Created by marti on 08/12/2016.
  */
 
+/**
+ * Business class for the Boards.
+ * Provides way to do the basic CRUD operations
+ * on the Board class.
+ */
+
 @Stateless
 public class BoardManagerBean extends GenericManagerBean<Board> {
 

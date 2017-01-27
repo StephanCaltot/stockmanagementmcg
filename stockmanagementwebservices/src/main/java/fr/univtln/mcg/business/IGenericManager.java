@@ -11,7 +11,5 @@ import java.util.List;
 public interface IGenericManager<T> {
     T create(T pT);
     T update(T pT);
-    T find(int pId);
-    void delete(int pId);
-    List<T> findAll();
+
 }

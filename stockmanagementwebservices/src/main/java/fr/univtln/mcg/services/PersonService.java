@@ -14,6 +14,13 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
+/*
+ * REST Service at url /people
+ * Provides ways to create/update an entity (see superclass)
+ * and also get a person by his id or get all the people
+ * from the database.
+ */
+
 
 @Stateless
 @Produces(MediaType.APPLICATION_JSON)
@@ -23,15 +30,25 @@ public class PersonService extends GenericService<Person> {
     @Inject
     PersonManagerBean personManager;
 
+    /**
+     * @param id
+     * @return Response with the person loaded from
+     * the database with this id
+     */
+
     @GET
-    @Path("nongen/{id}")
+    @Path("/{id}")
     public Response findNonGeneric(@PathParam("id") int id) {
         Person person = personManager.findPersonById(id);
         return Response.ok().entity(person).build();
     }
 
+    /**
+     * @return Response with all the people in the
+     * people in the database
+     */
+
     @GET
-    @Path("nongen")
     public Response findAllNonGeneric(){
         List<Person> people = personManager.findAllPeople();
         return Response.ok().entity(people).build();

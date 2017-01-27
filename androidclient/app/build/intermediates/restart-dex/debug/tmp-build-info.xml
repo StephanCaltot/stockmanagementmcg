@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="arm64-v8a,armeabi-v7a,armeabi"
+    api-level="21"
+    density="xhdpi"
+    format="8"
+    plugin-version="2.2.2"
+    timestamp="1552342814806103"
+    token="4570888726158144008"
+    verifier="FULL_BUILD_REQUESTED" >
+
+    <task
+        name="javac"
+        duration="829" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="183" />
+    <task
+        name="verifier"
+        duration="72" />
+
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+        type="RESOURCES" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\10\persistence-api-1.0_744bd2c3d1bf22f122b607465c654a635010943a\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.1.0_d4c67f447c8d7092879a4d49f2791cb91ce261d2\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.4.0_c27e468ffffc24493f0d105cbd10803814717a41\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.4.0_1065b09c9770ef6de0a67fcac6d551de098acee8\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.4.0_03861393b3e3b270074b1895bf3d6adf43360547\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.4.0_cdb08ea84e7cc9bcb829b398ceba64a41257931d\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_bddc86d2a04222d37ddf67330619cb151e89d1c1\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.3.0_92c343d9f4449077266f697d0b0b711568fbec1a\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-annotations-2.7.0_af80dbc4f6137d72b8459371cb6e131105c2fc97\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.4.0_2c60cd419835d442041501fa44586b25f17d4938\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_1\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_0\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.4.0_63f13c309aa358e44bfd68e3cad8520aa1fcd4e3\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-core-2.7.2_1a6f968f2271115ff0bbab6eb2a766b7eeeb5b31\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_5\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\10\converter-jackson-2.1.0_0fb03216bc8030e002d2e7d8cbeb642eeaa9579b\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_4\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_7\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_6\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_9\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_8\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.8.0_8f852289e5d87740c53e71ed5490e9877c402d14\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_d0f6a403b09e1b431fa1ae96dfba0d8ecd074dfb\classes.dex"
+        type="DEX" />
+    <artifact
+        location="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-databind-2.7.2_4065c017eb25975e2bcc25cb848eadd0439c60f6\classes.dex"
+        type="DEX" />
+
+</instant-run>

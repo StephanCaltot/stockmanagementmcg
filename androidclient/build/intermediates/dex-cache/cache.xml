@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\marti\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.8.0\5ea7af56cc7c567ed9856d99efb30740e9b17ff\okio-1.8.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.8.0_8f852289e5d87740c53e71ed5490e9877c402d14\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\marti\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.7.2\84ffa765dd258dbab8695963c41308b054f3a1cb\jackson-databind-2.7.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="84ffa765dd258dbab8695963c41308b054f3a1cb">
+        <dex dex="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-databind-2.7.2_4065c017eb25975e2bcc25cb848eadd0439c60f6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="82ff033cd65ba95822f2e919b7491200b84893be">
+        <dex dex="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_d0f6a403b09e1b431fa1ae96dfba0d8ecd074dfb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\marti\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-jackson\2.1.0\ef33476a62d9c62dfca6b6c9e086f2e3343a96f4\converter-jackson-2.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ef33476a62d9c62dfca6b6c9e086f2e3343a96f4">
+        <dex dex="C:\Users\marti\Desktop\Cours M2\androidclient\app\build\intermediates\transforms\dex\debug\folders\1000\10\converter-jackson-2.1.0_0fb03216bc8030e002d2e7d8cbeb642eeaa9579b\classes.dex" />
+    </item>
+
+</items>
